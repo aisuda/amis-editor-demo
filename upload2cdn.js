@@ -17,7 +17,7 @@ const prefix = 'fex/';
 
 async function main() {
     const folder = 'gh-pages';
-    const productName = 'amis-admin-gh-pages';
+    const productName = 'amis-editor-gh-pages';
 
     if (!fs.existsSync(folder)) {
         throw new Error('文件夹不存在');
@@ -35,12 +35,10 @@ async function main() {
 
         const relativePath = path.relative(folder, basedir);
         const objectName = path.join(prefix, productName, relativePath, filename);
-        promises.push(() => client
-            .putObjectFromFile(bucketName, objectName, path.join(basedir, filename))
-            .then(
-                () => console.log(` ==> ${objectName}`),
-                res => console.error(res)
-            )
+        promises.push(() =>
+            client
+                .putObjectFromFile(bucketName, objectName, path.join(basedir, filename))
+                .then(() => console.log(` ==> ${objectName}`), res => console.error(res))
         );
     });
 
@@ -48,10 +46,11 @@ async function main() {
         console.log('Nothing need to upload');
     }
 
-    return promises
-        .reduce((preview, current) => {
-            return preview.then(current);
-        }, Promise.resolve());
+    return promises.reduce((preview, current) => {
+        return preview.then(current);
+    }, Promise.resolve());
 }
 
-main().then(() => console.log('Done!')).catch(e => console.error(e.message, e.stack));
+main()
+    .then(() => console.log('Done!'))
+    .catch(e => console.error(e.message, e.stack));
