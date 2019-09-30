@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "outDir": "output",
+        "module": "commonjs",
+        "target": "es5",
+        "lib": ["es6", "dom"],
+        "sourceMap": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDir": "./",
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": ["./node_modules/@types", "./typings"]
+    },
+    "include": ["**/*"],
+    "exclude": ["node_modules", "build", "scripts", "acceptance-tests", "webpack", "jest", "src/setupTests.ts"],
+    "types": ["typePatches"]
+}

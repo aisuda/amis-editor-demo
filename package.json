@@ -1,0 +1,62 @@
+{
+    "name": "amis-editor",
+    "version": "1.0.0",
+    "description": "amis 可视化编辑器",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "fis3 server start --www ./public --port 8082 --no-daemon",
+        "server": "fis3 server start --www ./public --port 8082 --no-daemon",
+        "dev": "fis3 release -cwd ./public",
+        "gh-pages": "rm -rf gh-pages && fis3 release gh-pages -c",
+        "deploy-gh-pages": "git subtree push --prefix gh-pages origin gh-pages"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fex-team/amis-editor.git"
+    },
+    "keywords": [
+        "amis",
+        "editor"
+    ],
+    "author": "fex",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fex-team/amis-editor/issues"
+    },
+    "homepage": "https://github.com/fex-team/amis-editor#readme",
+    "dependencies": {
+        "@fex/amis-editor": "0.0.55",
+        "amis": "1.0.2-beta.10",
+        "axios": "^0.19.0",
+        "bootstrap": "3.4.1",
+        "copy-to-clipboard": "^3.2.0",
+        "mobx": "4.5.0",
+        "mobx-react": "5.2.8",
+        "qs": "6.5.1",
+        "react": "16.8.6",
+        "react-dom": "16.8.6",
+        "react-router": "5.0.1",
+        "react-router-dom": "5.0.1"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.123",
+        "@types/node": "^11.13.8",
+        "@types/qs": "^6.5.3",
+        "@types/react": "^16.8.4",
+        "@types/react-dom": "^16.8.4",
+        "@types/react-router-dom": "^4.3.2",
+        "axios-mock-adapter": "^1.16.0",
+        "bce-sdk-js": "^0.2.9",
+        "fis-parser-node-sass": "^1.0.5",
+        "fis3": "^3.4.41",
+        "fis3-deploy-skip-packed": "0.0.5",
+        "fis3-hook-commonjs": "^0.1.31",
+        "fis3-hook-node_modules": "^2.3.1",
+        "fis3-packager-deps-pack": "^0.1.2",
+        "fis3-parser-typescript": "^1.2.2",
+        "fis3-postpackager-loader": "^2.1.11",
+        "fis3-preprocessor-js-require-css": "^0.1.3",
+        "fs-walk": "0.0.2"
+    }
+}
