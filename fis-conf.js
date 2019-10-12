@@ -30,7 +30,7 @@ const packConfig = {
         '!echarts/**'
     ],
     // css 打包
-    'pkg/style.css': ['node_modules/*/**.css', '*.scss', '!/scss/*.scss', '/scss/*.scss']
+    'pkg/style.css': ['node_modules/*/**.css', '*.scss', '!/scss/*.scss', '/scss/*.scss', '!monaco-editor/**']
 };
 
 fis.get('project.ignore').push('public/**', 'gh-pages/**');
