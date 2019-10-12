@@ -234,6 +234,6 @@ ghPages.match('*', {
 ghPages.match('{*.min.js,monaco-editor/**.js}', {
     optimizer: null
 });
-ghPages.match('monaco-editor/**.js', {
+ghPages.match('monaco-editor/**', {
     useHash: false
 });
