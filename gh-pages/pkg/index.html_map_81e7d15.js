@@ -4754,7 +4754,7 @@ require.resourceMap({
   },
   "pkg": {
     "p1": {
-      "url": "https://bce.bdstatic.com/fex/amis-editor-gh-pages/pkg/rich-text_7b3687e.js",
+      "url": "https://bce.bdstatic.com/fex/amis-editor-gh-pages/pkg/rich-text_a29c1e2.js",
       "type": "js"
     },
     "p2": {
