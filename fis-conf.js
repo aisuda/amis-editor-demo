@@ -16,6 +16,10 @@ const packConfig = {
     'pkg/echarts.js': ['zrender/**', 'echarts/**'],
     'pkg/api-mock.js': ['mock/*.ts'],
     'pkg/app.js': ['/App.tsx', '/App.tsx:deps'],
+    'pkg/monaco-editor.js': [
+        'monaco-editor/esm/vs/editor/editor.main.js',
+        'monaco-editor/esm/vs/editor/editor.main.js:deps'
+    ],
     'pkg/rest.js': [
         '**.{js,jsx,ts,tsx}',
         '!static/mod.js',
@@ -42,6 +46,16 @@ fis.set('project.files', ['*.html', 'mock/**']);
 fis.match('/mock/**.{json,js,conf}', {
     // isMod: false,
     useCompile: false
+});
+
+fis.match('monaco-editor/esm/**.js', {
+    parser: fis.plugin('typescript', {
+        importHelpers: true,
+        esModuleInterop: true,
+        experimentalDecorators: true,
+        sourceMap: false
+    }),
+    preprocessor: fis.plugin('js-require-css')
 });
 
 fis.match('*.scss', {
@@ -97,37 +111,18 @@ fis.match('*.html:jsx', {
     isMod: false
 });
 
-fis.match('monaco-editor/**.js', {
-    isMod: false,
-    standard: null
-});
-
-fis.match('/node_modules/monaco-editor/min/(**)', {
-    standard: false,
-    isMod: false,
-    packTo: null,
-    optimizer: false,
-    postprocessor: function(content, file) {
-        if (!file.isJsLike || /worker/.test(file.basename)) {
-            return content;
-        }
-
-        content = content.replace(/\bself\.require\b/g, 'require || self.require');
-
-        return (
-            '(function(define, require) {\n' +
-            content +
-            '\n})(this.monacaAmd && this.monacaAmd.define || this.define, this.monacaAmd && this.monacaAmd.require);'
-        );
-    }
-});
-fis.match('/node_modules/monaco-editor/min/**/loader.js', {
-    postprocessor: function(content) {
-        return '(function(self) {\n' + content + '\n}).call(this.monacaAmd || (this.monacaAmd = {}));';
-    }
-});
-
 fis.match('::package', {
+    prepackager: fis.plugin('stand-alone-pack', {
+        '/pkg/editor.worker.js': 'monaco-editor/esm/vs/editor/editor.worker.js',
+        '/pkg/json.worker.js': 'monaco-editor/esm/vs/language/json/json.worker',
+        '/pkg/css.worker.js': 'monaco-editor/esm/vs/language/css/css.worker',
+        '/pkg/html.worker.js': 'monaco-editor/esm/vs/language/html/html.worker',
+        '/pkg/ts.worker.js': 'monaco-editor/esm/vs/language/typescript/ts.worker',
+
+        // 替换这些文件里面的路径引用。
+        // 如果不配置，源码中对于打包文件的引用是不正确的。
+        replaceFiles: ['amis/lib/components/Editor.js']
+    }),
     postpackager: fis.plugin('loader', {
         useInlineMap: false,
         resourceType: 'mod'
