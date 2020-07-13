@@ -61,3 +61,4 @@ typings/
 .next
 
 gh-pages
+/public

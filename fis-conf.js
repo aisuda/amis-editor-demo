@@ -10,7 +10,8 @@ const packConfig = {
         '!amis/lib/components/RichText.js',
         '!jquery/**',
         '!zrender/**',
-        '!echarts/**'
+        '!echarts/**',
+        '!amis-editor/**'
     ],
     'pkg/rich-text.js': ['amis/lib/components/RichText.js', 'froala-editor/**', 'jquery/**'],
     'pkg/echarts.js': ['zrender/**', 'echarts/**'],
@@ -31,7 +32,8 @@ const packConfig = {
         '!jquery/**',
         '!amis/lib/components/RichText.js',
         '!zrender/**',
-        '!echarts/**'
+        '!echarts/**',
+        '!amis-editor/**'
     ],
     // css 打包
     'pkg/style.css': ['node_modules/*/**.css', '*.scss', '!/scss/*.scss', '/scss/*.scss', '!monaco-editor/**']
@@ -82,13 +84,13 @@ fis.match('*.{jsx,tsx,ts}', {
             esModuleInterop: true
         }),
 
-        function(contents, file) {
+        function (contents, file) {
             if (typeof contents !== 'string') {
                 return contents;
             }
 
             // dynamic import 支持
-            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function(
+            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function (
                 _,
                 tslib,
                 quto,
@@ -103,6 +105,18 @@ fis.match('*.{jsx,tsx,ts}', {
     preprocessor: fis.plugin('js-require-css'),
     isMod: true,
     rExt: '.js'
+});
+
+fis.match('amis/**.js', {
+    preprocessor: fis.plugin('js-require-css')
+});
+
+fis.match('tinymce/{tinymce.js,plugins/**.js,themes/silver/theme.js}', {
+    ignoreDependencies: true
+});
+
+fis.match('tinymce/plugins/*/index.js', {
+    ignoreDependencies: false
 });
 
 fis.match('*.html:jsx', {
@@ -193,13 +207,13 @@ ghPages.match('{*.jsx,*.tsx,*.ts}', {
             esModuleInterop: true
         }),
 
-        function(contents, file) {
+        function (contents, file) {
             if (typeof contents !== 'string') {
                 return contents;
             }
 
             // dynamic import 支持
-            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function(
+            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function (
                 _,
                 tslib,
                 quto,
@@ -213,7 +227,7 @@ ghPages.match('{*.jsx,*.tsx,*.ts}', {
     ]
 });
 ghPages.match('{*.jsx,*.tsx,*.ts,*.js}', {
-    moduleId: function(m, path) {
+    moduleId: function (m, path) {
         return fis.util.md5('amis' + path);
     }
 });
