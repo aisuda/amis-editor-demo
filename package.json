@@ -27,7 +27,7 @@
     "homepage": "https://github.com/fex-team/amis-editor#readme",
     "dependencies": {
         "amis": "^1.0.15-beta.8",
-        "amis-editor": "1.0.0",
+        "amis-editor": "1.0.3",
         "axios": "^0.19.0",
         "bootstrap": "3.4.1",
         "copy-to-clipboard": "^3.2.0",
