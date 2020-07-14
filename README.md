@@ -43,7 +43,7 @@ render() {
 
 首先，注册自定义组件的时候需要设置一个 `name` 属性，这个属性值应该是唯一的。后续注册编辑器是靠这个关联。
 
-如本仓库中示例，name 值为 `my-renderere`。
+如本仓库中示例，name 值为 `my-renderer`。
 
 ```tsx
 @Renderer({
