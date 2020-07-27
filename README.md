@@ -122,3 +122,7 @@ export default class MyRendererEditor extends BasicEditor {
 ```
 
 然后直接看效果吧 https://github.com/fex-team/amis-editor 这里面插入的时候选择输入 my-renderer 然后就可以插入自定义的组件了。
+
+## 使用协议
+
+目前 amis-editor 未开源，但可以免费使用（包括商用）。
