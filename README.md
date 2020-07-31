@@ -1,8 +1,13 @@
 # amis-editor
 amis 可视化编辑器
 
+## 安装
 
-## 如何使用
+```
+npm i amis-editor
+```
+
+## 使用
 
 ```jsx
 import {Editor} from 'amis-editor';
