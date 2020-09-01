@@ -1,5 +1,8 @@
 # amis-editor
+
 amis 可视化编辑器, 在线体验：http://fex-team.github.io/amis-editor
+
+要使用编辑器必须熟悉 React，如果不了解建议使用[速搭](https://suda.baidu.com/)。
 
 ## 安装
 
