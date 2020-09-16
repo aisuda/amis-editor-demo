@@ -1,8 +1,16 @@
 # amis-editor
-amis 可视化编辑器
 
+amis 可视化编辑器, 在线体验：http://fex-team.github.io/amis-editor
 
-## 如何使用
+要使用编辑器必须熟悉 React，如果不了解建议使用[速搭](https://suda.baidu.com/)。
+
+## 安装
+
+```
+npm i amis-editor
+```
+
+## 使用
 
 ```jsx
 import {Editor} from 'amis-editor';
@@ -122,3 +130,7 @@ export default class MyRendererEditor extends BasicEditor {
 ```
 
 然后直接看效果吧 https://github.com/fex-team/amis-editor 这里面插入的时候选择输入 my-renderer 然后就可以插入自定义的组件了。
+
+## 使用协议
+
+目前 amis-editor 未开源，但可以免费使用（包括商用）。
