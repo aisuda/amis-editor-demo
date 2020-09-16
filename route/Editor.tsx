@@ -9,8 +9,20 @@ import '../editor/MyRenderer';
 
 let currentIndex = -1;
 
+let host = `${window.location.protocol}//${window.location.host}`;
+
+// 如果在 gh-pages 里面
+if (/^\/amis/.test(window.location.pathname)) {
+    host += '/amis';
+}
+
+const schemaUrl = `${host}/schema.json`;
+
+// @ts-ignore
+__uri('amis/schema.json');
+
 export default inject('store')(
-    observer(function({store, location, history, match}: {store: IMainStore} & RouteComponentProps<{id: string}>) {
+    observer(function ({store, location, history, match}: {store: IMainStore} & RouteComponentProps<{id: string}>) {
         const index: number = parseInt(match.params.id, 10);
 
         if (index !== currentIndex) {
@@ -63,6 +75,7 @@ export default inject('store')(
                     value={store.schema}
                     onChange={(value: any) => store.updateSchema(value)}
                     className="is-fixed"
+                    $schemaUrl={schemaUrl}
                 />
             </Layout>
         );

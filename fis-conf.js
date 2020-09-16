@@ -156,7 +156,7 @@ fis.media('dev')
     .match('/node_modules/**.js', {
         packTo: '/pkg/npm.js'
     })
-    .match('monaco-editor/**.js', {
+    .match('{monaco-editor,amis-editor}/**.js', {
         packTo: null
     });
 
