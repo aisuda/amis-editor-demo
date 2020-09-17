@@ -250,3 +250,6 @@ ghPages.match('{*.min.js,monaco-editor/**.js}', {
 ghPages.match('monaco-editor/**', {
     useHash: false
 });
+ghPages.match('amis/schema.json', {
+    release: '/schema.json'
+});
