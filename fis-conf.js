@@ -75,6 +75,10 @@ fis.match('/node_modules/**.js', {
     isMod: true
 });
 
+fis.match('amis/schema.json', {
+    release: '/schema.json'
+});
+
 fis.match('*.{jsx,tsx,ts}', {
     parser: [
         fis.plugin('typescript', {
