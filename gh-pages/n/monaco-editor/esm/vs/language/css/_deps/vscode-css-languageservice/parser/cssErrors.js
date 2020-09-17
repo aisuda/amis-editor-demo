@@ -6,6 +6,7 @@ define('d0179cf', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.ParseError = exports.CSSIssueType = void 0;
   var tslib_1 = require("849c8c1");
   var nls = tslib_1.__importStar(require("da3a483"));
   var localize = nls.loadMessageBundle();

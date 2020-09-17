@@ -6,6 +6,7 @@ define('1a440b2', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.create = exports.HTMLWorker = void 0;
   var tslib_1 = require("849c8c1");
   var htmlService = tslib_1.__importStar(require("127a609"));
   var ls = tslib_1.__importStar(require("b1903ef"));

@@ -6,6 +6,7 @@ define('0ef8562', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.SCSSParser = void 0;
   var tslib_1 = require("849c8c1");
   var __extends = (this && this.__extends) || (function () {
       var extendStatics = function (d, b) {

@@ -6,6 +6,7 @@ define('252f842', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.getSelectionRanges = void 0;
   var main_js_1 = require("6b31927");
   var cssNodes_js_1 = require("0b0187d");
   var cssLanguageTypes_js_1 = require("1ea32d2");

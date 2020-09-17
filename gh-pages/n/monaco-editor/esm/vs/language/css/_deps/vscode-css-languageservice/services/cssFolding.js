@@ -6,6 +6,7 @@ define('8292f2f', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.getFoldingRanges = void 0;
   var cssScanner_js_1 = require("0d1fc26");
   var scssScanner_js_1 = require("6434401");
   var lessScanner_js_1 = require("3e0281a");

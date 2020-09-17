@@ -2,6 +2,7 @@ define('b63a95f', function(require, exports, module) {
 
   "use strict";
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.findDocumentSymbols = void 0;
   /*---------------------------------------------------------------------------------------------
    *  Copyright (c) Microsoft Corporation. All rights reserved.
    *  Licensed under the MIT License. See License.txt in the project root for license information.

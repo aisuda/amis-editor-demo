@@ -2,23 +2,24 @@ define('d0040fa', function(require, exports, module) {
 
   "use strict";
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.getLanguageService = exports.MarkedString = exports.FormattingOptions = exports.TextEdit = exports.Diagnostic = exports.SymbolInformation = exports.Range = exports.Hover = exports.CompletionList = exports.CompletionItem = exports.Position = exports.TextDocument = void 0;
   var tslib_1 = require("849c8c1");
   /*---------------------------------------------------------------------------------------------
    *  Copyright (c) Microsoft Corporation. All rights reserved.
    *  Licensed under the MIT License. See License.txt in the project root for license information.
    *--------------------------------------------------------------------------------------------*/
   var main_js_1 = require("4872c6c");
-  exports.TextDocument = main_js_1.TextDocument;
-  exports.Position = main_js_1.Position;
-  exports.CompletionItem = main_js_1.CompletionItem;
-  exports.CompletionList = main_js_1.CompletionList;
-  exports.Hover = main_js_1.Hover;
-  exports.Range = main_js_1.Range;
-  exports.SymbolInformation = main_js_1.SymbolInformation;
-  exports.Diagnostic = main_js_1.Diagnostic;
-  exports.TextEdit = main_js_1.TextEdit;
-  exports.FormattingOptions = main_js_1.FormattingOptions;
-  exports.MarkedString = main_js_1.MarkedString;
+  Object.defineProperty(exports, "TextDocument", { enumerable: true, get: function () { return main_js_1.TextDocument; } });
+  Object.defineProperty(exports, "Position", { enumerable: true, get: function () { return main_js_1.Position; } });
+  Object.defineProperty(exports, "CompletionItem", { enumerable: true, get: function () { return main_js_1.CompletionItem; } });
+  Object.defineProperty(exports, "CompletionList", { enumerable: true, get: function () { return main_js_1.CompletionList; } });
+  Object.defineProperty(exports, "Hover", { enumerable: true, get: function () { return main_js_1.Hover; } });
+  Object.defineProperty(exports, "Range", { enumerable: true, get: function () { return main_js_1.Range; } });
+  Object.defineProperty(exports, "SymbolInformation", { enumerable: true, get: function () { return main_js_1.SymbolInformation; } });
+  Object.defineProperty(exports, "Diagnostic", { enumerable: true, get: function () { return main_js_1.Diagnostic; } });
+  Object.defineProperty(exports, "TextEdit", { enumerable: true, get: function () { return main_js_1.TextEdit; } });
+  Object.defineProperty(exports, "FormattingOptions", { enumerable: true, get: function () { return main_js_1.FormattingOptions; } });
+  Object.defineProperty(exports, "MarkedString", { enumerable: true, get: function () { return main_js_1.MarkedString; } });
   var jsonCompletion_js_1 = require("2b1fcae");
   var jsonHover_js_1 = require("fa9f56b");
   var jsonValidation_js_1 = require("5067f53");

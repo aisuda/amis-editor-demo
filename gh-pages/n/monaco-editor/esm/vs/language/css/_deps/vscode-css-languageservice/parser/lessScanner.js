@@ -6,6 +6,7 @@ define('3e0281a', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.LESSScanner = exports.Ellipsis = void 0;
   var tslib_1 = require("849c8c1");
   var __extends = (this && this.__extends) || (function () {
       var extendStatics = function (d, b) {

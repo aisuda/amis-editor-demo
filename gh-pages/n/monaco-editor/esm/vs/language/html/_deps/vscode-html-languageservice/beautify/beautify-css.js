@@ -64,6 +64,7 @@ define('cd82cf8', function(require, exports, module) {
       });
   */
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.css_beautify = void 0;
   // http://www.w3.org/TR/CSS21/syndata.html#tokenization
   // http://www.w3.org/TR/css3-syntax/
   var legacy_beautify_css = 

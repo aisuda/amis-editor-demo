@@ -6,6 +6,7 @@ define('b2bae0f', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.create = exports.TypeScriptWorker = void 0;
   var tslib_1 = require("849c8c1");
   var ts = tslib_1.__importStar(require("5cdb8ee"));
   var lib_js_1 = require("2696aee");

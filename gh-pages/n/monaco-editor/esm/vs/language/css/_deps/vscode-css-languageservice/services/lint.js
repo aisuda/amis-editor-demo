@@ -6,11 +6,12 @@ define('5e68366', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.LintVisitor = void 0;
   var tslib_1 = require("849c8c1");
   var languageFacts = tslib_1.__importStar(require("4b90411"));
   var lintRules_js_1 = require("919d479");
   var nodes = tslib_1.__importStar(require("0b0187d"));
-  var lintUtil_js_1 = tslib_1.__importDefault(require("0c7ecc3"));
+  var lintUtil_js_1 = tslib_1.__importStar(require("0c7ecc3"));
   var arrays_js_1 = require("8f039c5");
   var nls = tslib_1.__importStar(require("da3a483"));
   var localize = nls.loadMessageBundle();

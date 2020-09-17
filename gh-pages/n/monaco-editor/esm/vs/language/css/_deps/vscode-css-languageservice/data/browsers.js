@@ -2,6 +2,7 @@ define('caabc14', function(require, exports, module) {
 
   "use strict";
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.descriptions = exports.cssData = void 0;
   /*---------------------------------------------------------------------------------------------
    *  Copyright (c) Microsoft Corporation. All rights reserved.
    *  Licensed under the MIT License. See License.txt in the project root for license information.

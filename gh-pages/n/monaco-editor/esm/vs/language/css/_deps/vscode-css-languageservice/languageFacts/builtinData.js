@@ -6,6 +6,7 @@ define('85339ea', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.pageBoxDirectives = exports.svgElements = exports.html5Tags = exports.units = exports.basicShapeFunctions = exports.transitionTimingFunctions = exports.imageFunctions = exports.cssWideKeywords = exports.geometryBoxKeywords = exports.boxKeywords = exports.lineWidthKeywords = exports.lineStyleKeywords = exports.repeatStyleKeywords = exports.positionKeywords = void 0;
   exports.positionKeywords = {
       'bottom': 'Computes to ‘100%’ for the vertical position if one or two values are given, otherwise specifies the bottom edge as the origin for the next offset.',
       'center': 'Computes to ‘50%’ (‘left 50%’) for the horizontal position if the horizontal position is not otherwise specified, or ‘50%’ (‘top 50%’) for the vertical position if it is.',

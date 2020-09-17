@@ -6,6 +6,7 @@ define('badbd6c', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.CSSDataProvider = void 0;
   var CSSDataProvider = /** @class */ (function () {
       /**
        * Currently, unversioned data uses the V1 implementation

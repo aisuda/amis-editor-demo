@@ -6,6 +6,7 @@ define('0c7ecc3', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.Element = void 0;
   var arrays_js_1 = require("8f039c5");
   var Element = /** @class */ (function () {
       function Element(text, data) {

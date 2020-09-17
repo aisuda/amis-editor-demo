@@ -6,6 +6,7 @@ define('ab5a974', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.CSSNavigation = void 0;
   var tslib_1 = require("849c8c1");
   var main_js_1 = require("6b31927");
   var nls = tslib_1.__importStar(require("da3a483"));

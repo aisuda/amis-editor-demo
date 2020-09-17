@@ -6,6 +6,7 @@ define('0d1fc26', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.Scanner = exports.MultiLineStream = exports.TokenType = void 0;
   (function (TokenType) {
       TokenType[TokenType["Ident"] = 0] = "Ident";
       TokenType[TokenType["AtKeyword"] = 1] = "AtKeyword";

@@ -6,6 +6,7 @@ define('22d9c7b', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.selectorToElement = exports.simpleSelectorToMarkedString = exports.selectorToMarkedString = exports.toElement = exports.LabelElement = exports.RootElement = exports.Element = void 0;
   var tslib_1 = require("849c8c1");
   var __extends = (this && this.__extends) || (function () {
       var extendStatics = function (d, b) {

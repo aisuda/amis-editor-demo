@@ -2,6 +2,7 @@ define('77e6e6f', function(require, exports, module) {
 
   "use strict";
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.getColorValue = exports.hslFromColor = exports.colorFromHSL = exports.colorFrom256RGB = exports.colorFromHex = exports.hexDigit = exports.isColorValue = exports.isColorConstructor = exports.colorKeywords = exports.colors = exports.colorFunctions = void 0;
   var tslib_1 = require("849c8c1");
   /*---------------------------------------------------------------------------------------------
    *  Copyright (c) Microsoft Corporation. All rights reserved.

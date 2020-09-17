@@ -6,6 +6,7 @@ define('c8c7fe4', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.CSSCodeActions = void 0;
   var tslib_1 = require("849c8c1");
   var nodes = tslib_1.__importStar(require("0b0187d"));
   var languageFacts = tslib_1.__importStar(require("4b90411"));

@@ -2,6 +2,7 @@ define('2c8eafa', function(require, exports, module) {
 
   "use strict";
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.getSelectionRanges = void 0;
   /**
    * Until SelectionRange lands in LSP, we'll return Range from server and convert it to
    * SelectionRange on client side

@@ -6,6 +6,7 @@ define('8176e29', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.getBrowserLabel = exports.getEntryDescription = exports.browserNames = void 0;
   exports.browserNames = {
       E: 'Edge',
       FF: 'Firefox',

@@ -2,6 +2,7 @@ define('4ee499b', function(require, exports, module) {
 
   "use strict";
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.ScannerState = exports.TokenType = exports.SelectionRangeKind = void 0;
   (function (SelectionRangeKind) {
       /**
        * Empty Kind.

@@ -6,6 +6,7 @@ define('a7597b7', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.create = exports.CSSWorker = void 0;
   var tslib_1 = require("849c8c1");
   var cssService = tslib_1.__importStar(require("5ed085d"));
   var ls = tslib_1.__importStar(require("6b31927"));

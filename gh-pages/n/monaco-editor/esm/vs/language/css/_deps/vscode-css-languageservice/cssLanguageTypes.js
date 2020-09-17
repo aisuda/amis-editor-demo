@@ -6,10 +6,11 @@ define('1ea32d2', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.SelectionRangeKind = exports.Position = exports.TextEdit = exports.Range = void 0;
   var main_js_1 = require("6b31927");
-  exports.Range = main_js_1.Range;
-  exports.TextEdit = main_js_1.TextEdit;
-  exports.Position = main_js_1.Position;
+  Object.defineProperty(exports, "Range", { enumerable: true, get: function () { return main_js_1.Range; } });
+  Object.defineProperty(exports, "TextEdit", { enumerable: true, get: function () { return main_js_1.TextEdit; } });
+  Object.defineProperty(exports, "Position", { enumerable: true, get: function () { return main_js_1.Position; } });
   (function (SelectionRangeKind) {
       /**
        * Empty Kind.

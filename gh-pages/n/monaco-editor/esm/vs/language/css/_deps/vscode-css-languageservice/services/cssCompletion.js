@@ -6,6 +6,7 @@ define('81478b3', function(require, exports, module) {
    *--------------------------------------------------------------------------------------------*/
   'use strict';
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.CSSCompletion = void 0;
   var tslib_1 = require("849c8c1");
   var nodes = tslib_1.__importStar(require("0b0187d"));
   var cssSymbolScope_js_1 = require("8a1df5e");

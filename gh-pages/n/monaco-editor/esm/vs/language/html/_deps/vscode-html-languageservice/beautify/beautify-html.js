@@ -77,6 +77,7 @@ define('87895d2', function(require, exports, module) {
       });
   */
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.html_beautify = void 0;
   var beautify_js_1 = require("32f2bae");
   var beautify_css_js_1 = require("cd82cf8");
   var legacy_beautify_html = 

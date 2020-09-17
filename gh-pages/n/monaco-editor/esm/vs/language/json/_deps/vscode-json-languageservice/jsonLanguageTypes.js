@@ -2,14 +2,15 @@ define('3607d51', function(require, exports, module) {
 
   "use strict";
   Object.defineProperty(exports, "__esModule", { value: true });
+  exports.ClientCapabilities = exports.ErrorCode = exports.SelectionRangeKind = exports.FoldingRangeKind = exports.FoldingRange = exports.ColorPresentation = exports.ColorInformation = exports.Color = exports.TextEdit = exports.Range = void 0;
   var main_js_1 = require("4872c6c");
-  exports.Range = main_js_1.Range;
-  exports.TextEdit = main_js_1.TextEdit;
-  exports.Color = main_js_1.Color;
-  exports.ColorInformation = main_js_1.ColorInformation;
-  exports.ColorPresentation = main_js_1.ColorPresentation;
-  exports.FoldingRange = main_js_1.FoldingRange;
-  exports.FoldingRangeKind = main_js_1.FoldingRangeKind;
+  Object.defineProperty(exports, "Range", { enumerable: true, get: function () { return main_js_1.Range; } });
+  Object.defineProperty(exports, "TextEdit", { enumerable: true, get: function () { return main_js_1.TextEdit; } });
+  Object.defineProperty(exports, "Color", { enumerable: true, get: function () { return main_js_1.Color; } });
+  Object.defineProperty(exports, "ColorInformation", { enumerable: true, get: function () { return main_js_1.ColorInformation; } });
+  Object.defineProperty(exports, "ColorPresentation", { enumerable: true, get: function () { return main_js_1.ColorPresentation; } });
+  Object.defineProperty(exports, "FoldingRange", { enumerable: true, get: function () { return main_js_1.FoldingRange; } });
+  Object.defineProperty(exports, "FoldingRangeKind", { enumerable: true, get: function () { return main_js_1.FoldingRangeKind; } });
   (function (SelectionRangeKind) {
       /**
        * Empty Kind.
