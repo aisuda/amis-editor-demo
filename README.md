@@ -42,7 +42,7 @@ render() {
 
 ## 扩充自定义编辑器
 
-如何扩充 amis 渲染器，请前往[如何注册自定义类型](https://baidu.github.io/amis/docs/custom#%E6%B3%A8%E5%86%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B)，这里主要介绍如何把自定义的组件加入到编辑器里面来。
+如何扩充 amis 渲染器，请前往[如何注册自定义类型](https://baidu.github.io/amis/docs/start/custom#%E6%B3%A8%E5%86%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B)，这里主要介绍如何把自定义的组件加入到编辑器里面来。
 
 示例：
 
