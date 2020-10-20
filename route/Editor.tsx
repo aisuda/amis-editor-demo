@@ -12,8 +12,8 @@ let currentIndex = -1;
 let host = `${window.location.protocol}//${window.location.host}`;
 
 // 如果在 gh-pages 里面
-if (/^\/amis/.test(window.location.pathname)) {
-    host += '/amis';
+if (/^\/amis-editor/.test(window.location.pathname)) {
+    host += '/amis-editor';
 }
 
 const schemaUrl = `${host}/schema.json`;
