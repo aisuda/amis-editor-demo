@@ -68,7 +68,7 @@ export default inject('store')(
         }
 
         return (
-            <Layout header={renderHeader()}>
+            <Layout header={renderHeader()} headerFixed={false}>
                 <Editor
                     theme={'default'}
                     preview={store.preview}
