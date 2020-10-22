@@ -1,5 +1,5 @@
 {
-    "name": "amis-editor",
+    "name": "amis-editor-demo",
     "version": "1.0.0",
     "description": "amis 可视化编辑器",
     "main": "index.js",
@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fex-team/amis-editor.git"
+        "url": "git+https://github.com/fex-team/amis-editor-demo.git"
     },
     "keywords": [
         "amis",
@@ -22,9 +22,9 @@
     "author": "fex",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/fex-team/amis-editor/issues"
+        "url": "https://github.com/fex-team/amis-editor-demo/issues"
     },
-    "homepage": "https://github.com/fex-team/amis-editor#readme",
+    "homepage": "https://github.com/fex-team/amis-editor-demo#readme",
     "dependencies": {
         "amis": "^1.0.18-beta.0",
         "amis-editor": "2.0.0-rc.3",
