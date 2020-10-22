@@ -143,6 +143,9 @@
         {
           "type": "object",
           "properties": {
+            "label": {
+              "type": "string"
+            },
             "icon": {
               "$ref": "#/definitions/SchemaIcon"
             },
@@ -507,6 +510,9 @@
         "visibleOn": {
           "$ref": "#/definitions/SchemaExpression",
           "description": "是否显示表达式"
+        },
+        "label": {
+          "type": "string"
         },
         "icon": {
           "$ref": "#/definitions/SchemaIcon"
@@ -3010,6 +3016,9 @@
         },
         {
           "$ref": "#/definitions/TimeControlSchema"
+        },
+        {
+          "$ref": "#/definitions/MonthControlSchema"
         },
         {
           "$ref": "#/definitions/DateRangeControlSchema"
@@ -12494,6 +12503,322 @@
       ],
       "additionalProperties": false,
       "description": "Time 时间选择控件\n文档：https://baidu.gitee.io/amis/docs/components/form/time"
+    },
+    "MonthControlSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "$ref": "#/definitions/SchemaClassName",
+          "description": "容器 css 类名"
+        },
+        "$ref": {
+          "type": "string",
+          "description": "配合 definitions 一起使用，可以实现无限循环的渲染器。"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "是否禁用"
+        },
+        "disabledOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否禁用表达式"
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "是否隐藏"
+        },
+        "hiddenOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否隐藏表达式"
+        },
+        "visible": {
+          "type": "boolean",
+          "description": "是否显示"
+        },
+        "visibleOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否显示表达式"
+        },
+        "type": {
+          "type": "string",
+          "const": "month",
+          "description": "指定为月份时间选择控件"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "full"
+          ],
+          "description": "表单项大小"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean",
+              "const": false
+            }
+          ],
+          "description": "描述标题"
+        },
+        "labelClassName": {
+          "$ref": "#/definitions/SchemaClassName",
+          "description": "配置 label className"
+        },
+        "name": {
+          "type": "string",
+          "description": "字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c"
+        },
+        "remark": {
+          "$ref": "#/definitions/SchemaRemark",
+          "description": "显示一个小图标, 鼠标放上去的时候显示提示内容"
+        },
+        "labelRemark": {
+          "$ref": "#/definitions/SchemaRemark",
+          "description": "显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起"
+        },
+        "hint": {
+          "type": "string",
+          "description": "输入提示，聚焦的时候显示"
+        },
+        "submitOnChange": {
+          "type": "boolean",
+          "description": "当修改完的时候是否提交表单。"
+        },
+        "readOnly": {
+          "type": "boolean",
+          "description": "是否只读"
+        },
+        "validateOnChange": {
+          "type": "boolean",
+          "description": "不设置时，当表单提交过后表单项每次修改都会触发重新验证，\n如果设置了，则由此配置项来决定要不要每次修改都触发验证。"
+        },
+        "description": {
+          "type": "string",
+          "description": "描述内容，支持 Html 片段。"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "descriptionClassName": {
+          "$ref": "#/definitions/SchemaClassName",
+          "description": "配置描述上的 className"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "inline",
+            "horizontal"
+          ],
+          "description": "配置当前表单项展示模式"
+        },
+        "horizontal": {
+          "$ref": "#/definitions/FormSchemaHorizontal",
+          "description": "当配置为水平布局的时候，用来配置具体的左右分配。"
+        },
+        "inline": {
+          "type": "boolean",
+          "description": "表单 control 是否为 inline 模式。"
+        },
+        "inputClassName": {
+          "$ref": "#/definitions/SchemaClassName",
+          "description": "配置 input className"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "占位符"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "是否为必填"
+        },
+        "validationErrors": {
+          "type": "object",
+          "properties": {
+            "isAlpha": {
+              "type": "string"
+            },
+            "isAlphanumeric": {
+              "type": "string"
+            },
+            "isEmail": {
+              "type": "string"
+            },
+            "isFloat": {
+              "type": "string"
+            },
+            "isInt": {
+              "type": "string"
+            },
+            "isJson": {
+              "type": "string"
+            },
+            "isLength": {
+              "type": "string"
+            },
+            "isNumeric": {
+              "type": "string"
+            },
+            "isRequired": {
+              "type": "string"
+            },
+            "isUrl": {
+              "type": "string"
+            },
+            "matchRegexp": {
+              "type": "string"
+            },
+            "matchRegexp2": {
+              "type": "string"
+            },
+            "matchRegexp3": {
+              "type": "string"
+            },
+            "matchRegexp4": {
+              "type": "string"
+            },
+            "matchRegexp5": {
+              "type": "string"
+            },
+            "maxLength": {
+              "type": "string"
+            },
+            "maximum": {
+              "type": "string"
+            },
+            "minLength": {
+              "type": "string"
+            },
+            "minimum": {
+              "type": "string"
+            }
+          },
+          "description": "验证失败的提示信息"
+        },
+        "validations": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "isAlpha": {
+                  "type": "boolean",
+                  "description": "是否是字母"
+                },
+                "isAlphanumeric": {
+                  "type": "boolean",
+                  "description": "是否为字母数字"
+                },
+                "isEmail": {
+                  "type": "boolean",
+                  "description": "是否为邮箱地址"
+                },
+                "isFloat": {
+                  "type": "boolean",
+                  "description": "是否为浮点型"
+                },
+                "isInt": {
+                  "type": "boolean",
+                  "description": "是否为整型"
+                },
+                "isJson": {
+                  "type": "boolean",
+                  "description": "是否为 json"
+                },
+                "isLength": {
+                  "type": "number",
+                  "description": "长度等于指定值"
+                },
+                "isNumeric": {
+                  "type": "boolean",
+                  "description": "是否为数字"
+                },
+                "isRequired": {
+                  "type": "boolean",
+                  "description": "是否为必填"
+                },
+                "isUrl": {
+                  "type": "boolean",
+                  "description": "是否为 URL 地址"
+                },
+                "matchRegexp": {
+                  "type": "string",
+                  "description": "内容命中指定正则"
+                },
+                "matchRegexp1": {
+                  "type": "string",
+                  "description": "内容命中指定正则"
+                },
+                "matchRegexp2": {
+                  "type": "string",
+                  "description": "内容命中指定正则"
+                },
+                "matchRegexp3": {
+                  "type": "string",
+                  "description": "内容命中指定正则"
+                },
+                "matchRegexp4": {
+                  "type": "string",
+                  "description": "内容命中指定正则"
+                },
+                "matchRegexp5": {
+                  "type": "string",
+                  "description": "内容命中指定正则"
+                },
+                "maxLength": {
+                  "type": "number",
+                  "description": "最大长度为指定值"
+                },
+                "maximum": {
+                  "type": "number",
+                  "description": "最大值为指定值"
+                },
+                "minLength": {
+                  "type": "number",
+                  "description": "最小长度为指定值"
+                },
+                "minimum": {
+                  "type": "number",
+                  "description": "最小值为指定值"
+                }
+              }
+            }
+          ]
+        },
+        "value": {
+          "description": "默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。"
+        },
+        "clearable": {
+          "type": "boolean",
+          "description": "是否显示清除按钮"
+        },
+        "format": {
+          "type": "string",
+          "description": "月份存储格式"
+        },
+        "inputFormat": {
+          "type": "string",
+          "description": "月份展示格式"
+        },
+        "utc": {
+          "type": "boolean",
+          "description": "设定是否存储 utc 时间。"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false,
+      "description": "Month 月份选择控件\n文档：https://baidu.gitee.io/amis/docs/components/form/Month"
     },
     "DateRangeControlSchema": {
       "type": "object",
@@ -29810,7 +30135,7 @@
             },
             "arguments": {},
             "caller": {
-              "$ref": "#/definitions/interface-731470504-9814-11278-731470504-0-210430"
+              "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-210430"
             }
           },
           "required": [
@@ -29823,7 +30148,7 @@
         }
       ]
     },
-    "interface-731470504-9814-11278-731470504-0-210430": {
+    "interface-2073358172-9814-11278-2073358172-0-210430": {
       "type": "object",
       "properties": {
         "prototype": {},
@@ -29832,7 +30157,7 @@
         },
         "arguments": {},
         "caller": {
-          "$ref": "#/definitions/interface-731470504-9814-11278-731470504-0-210430"
+          "$ref": "#/definitions/interface-2073358172-9814-11278-2073358172-0-210430"
         }
       },
       "required": [
@@ -35149,7 +35474,7 @@
           "$ref": "#/definitions/RemarkSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|icon|trigger|title|content|placement|rootClose|label|labelClassName|name|popOver|quickEdit|copyable)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|label|icon|trigger|title|content|placement|rootClose|labelClassName|name|popOver|quickEdit|copyable)$": {}
           }
         },
         {
@@ -39072,6 +39397,13 @@
           }
         },
         {
+          "$ref": "#/definitions/MonthControlSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|unique|columnClassName)$": {}
+          }
+        },
+        {
           "$ref": "#/definitions/DateRangeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
@@ -42956,6 +43288,13 @@
           }
         },
         {
+          "$ref": "#/definitions/MonthControlSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|columnClassName|columnRatio)$": {}
+          }
+        },
+        {
           "$ref": "#/definitions/DateRangeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
@@ -43256,7 +43595,7 @@
           "$ref": "#/definitions/RemarkSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|icon|trigger|title|content|placement|rootClose|tpl|text|popOver|quickEdit|copyable|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|label|icon|trigger|title|content|placement|rootClose|tpl|text|popOver|quickEdit|copyable|size|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value)$": {}
           }
         },
         {
@@ -43595,7 +43934,7 @@
           "$ref": "#/definitions/RemarkSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|icon|trigger|title|content|placement|rootClose|label|fixed|name|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|label|icon|trigger|title|content|placement|rootClose|fixed|name|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
           }
         },
         {
@@ -43934,7 +44273,7 @@
           "$ref": "#/definitions/RemarkSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|icon|trigger|title|content|placement|rootClose|label|labelClassName|name|popOver|quickEdit|copyable)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|label|icon|trigger|title|content|placement|rootClose|labelClassName|name|popOver|quickEdit|copyable)$": {}
           }
         },
         {
@@ -44273,7 +44612,7 @@
           "$ref": "#/definitions/RemarkSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|icon|trigger|title|content|placement|rootClose|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|mode|horizontal|columnClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|label|icon|trigger|title|content|placement|rootClose|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|mode|horizontal|columnClassName)$": {}
           }
         },
         {
@@ -44612,7 +44951,7 @@
           "$ref": "#/definitions/RemarkSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|icon|trigger|title|content|placement|rootClose|columnClassName|width|height|style)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|label|icon|trigger|title|content|placement|rootClose|columnClassName|width|height|style)$": {}
           }
         },
         {
@@ -44951,7 +45290,7 @@
           "$ref": "#/definitions/RemarkSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|icon|trigger|title|content|placement|rootClose|rowClassName|cellClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|label|icon|trigger|title|content|placement|rootClose|rowClassName|cellClassName)$": {}
           }
         },
         {
@@ -45269,6 +45608,10 @@
           }
         }
       ]
+    },
+    "UnkownSchema": {
+      "type": "object",
+      "description": "不能识别渲染器类型，无法提供提示信息。"
     }
   }
 }
