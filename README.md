@@ -1,16 +1,22 @@
-# amis-editor
+# amis-editor-demo
 
 amis 可视化编辑器, 在线体验：http://fex-team.github.io/amis-editor
 
 要使用编辑器必须熟悉 React，如果不了解建议使用[速搭](https://suda.baidu.com/)。
 
-## 安装
+## 本地运行这个项目
+
+1. `npm i` 安装依赖
+2. `npm start` 开服务
+3. `npm run dev` 开始编译，等编译出现时间信息后就可以刷新页面看效果了。
+
+## 在其他项目中使用 amis-editor
 
 ```
 npm i amis-editor
 ```
 
-## 使用
+使用 方法
 
 ```jsx
 import {Editor} from 'amis-editor';
@@ -31,14 +37,6 @@ render() {
 * `onChange: (value: any) => void`。 当编辑器修改的时候会触发。
 * `preview?: boolean` 是否为预览状态。
 * `autoFocus?: boolean` 是否自动聚焦第一个可编辑的组件。
-
-
-## 本地运行这个项目
-
-1. 安装npm 依赖
-2. `npm start` 开服务
-3. `npm run dev` 开始编译，等编译出现时间信息后就可以刷新页面看效果了。
-
 
 ## 扩充自定义编辑器
 
