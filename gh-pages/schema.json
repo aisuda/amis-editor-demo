@@ -11831,6 +11831,10 @@
           "type": "boolean",
           "description": "设定是否存储 utc 时间。"
         },
+        "emebed": {
+          "type": "boolean",
+          "description": "是否为内联模式？"
+        },
         "closeOnSelect": {
           "type": "boolean",
           "description": "点选日期后是否关闭弹窗"
@@ -12158,6 +12162,10 @@
         "utc": {
           "type": "boolean",
           "description": "设定是否存储 utc 时间。"
+        },
+        "emebed": {
+          "type": "boolean",
+          "description": "是否为内联模式？"
         },
         "timeFormat": {
           "type": "string",
@@ -12490,6 +12498,10 @@
           "type": "boolean",
           "description": "设定是否存储 utc 时间。"
         },
+        "emebed": {
+          "type": "boolean",
+          "description": "是否为内联模式？"
+        },
         "timeFormat": {
           "type": "string",
           "description": "时间的格式。"
@@ -12812,6 +12824,10 @@
         "utc": {
           "type": "boolean",
           "description": "设定是否存储 utc 时间。"
+        },
+        "emebed": {
+          "type": "boolean",
+          "description": "是否为内联模式？"
         }
       },
       "required": [
@@ -13136,6 +13152,10 @@
         "minDate": {
           "type": "string",
           "description": "最小日期限制，支持变量 $xxx 来取值，或者用相对值如：* `-2mins` 2分钟前\\n * `+2days` 2天后\\n* `-10week` 十周前\\n可用单位： `min`、`hour`、`day`、`week`、`month`、`year`。所有单位支持复数形式。"
+        },
+        "embed": {
+          "type": "boolean",
+          "description": "开启后变成非弹出模式，即内联模式。"
         }
       },
       "required": [
@@ -39379,35 +39399,35 @@
           "$ref": "#/definitions/DateControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|closeOnSelect|minDate|maxDate|unique|columnClassName)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|closeOnSelect|minDate|maxDate|unique|columnClassName)$": {}
           }
         },
         {
           "$ref": "#/definitions/DateTimeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|timeFormat|minDate|maxDate|timeConstraints|unique|columnClassName)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|timeFormat|minDate|maxDate|timeConstraints|unique|columnClassName)$": {}
           }
         },
         {
           "$ref": "#/definitions/TimeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|timeFormat|timeConstraints|unique|columnClassName)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|timeFormat|timeConstraints|unique|columnClassName)$": {}
           }
         },
         {
           "$ref": "#/definitions/MonthControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|unique|columnClassName)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|unique|columnClassName)$": {}
           }
         },
         {
           "$ref": "#/definitions/DateRangeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|delimiter|format|inputFormat|joinValues|maxDate|minDate|unique|columnClassName)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|delimiter|format|inputFormat|joinValues|maxDate|minDate|embed|unique|columnClassName)$": {}
           }
         },
         {
@@ -43270,35 +43290,35 @@
           "$ref": "#/definitions/DateControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|closeOnSelect|minDate|maxDate|columnClassName|columnRatio)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|closeOnSelect|minDate|maxDate|columnClassName|columnRatio)$": {}
           }
         },
         {
           "$ref": "#/definitions/DateTimeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|timeFormat|minDate|maxDate|timeConstraints|columnClassName|columnRatio)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|timeFormat|minDate|maxDate|timeConstraints|columnClassName|columnRatio)$": {}
           }
         },
         {
           "$ref": "#/definitions/TimeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|timeFormat|timeConstraints|columnClassName|columnRatio)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|timeFormat|timeConstraints|columnClassName|columnRatio)$": {}
           }
         },
         {
           "$ref": "#/definitions/MonthControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|columnClassName|columnRatio)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearable|format|inputFormat|utc|emebed|columnClassName|columnRatio)$": {}
           }
         },
         {
           "$ref": "#/definitions/DateRangeControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|delimiter|format|inputFormat|joinValues|maxDate|minDate|columnClassName|columnRatio)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|delimiter|format|inputFormat|joinValues|maxDate|minDate|embed|columnClassName|columnRatio)$": {}
           }
         },
         {
