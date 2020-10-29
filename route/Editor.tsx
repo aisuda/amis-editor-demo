@@ -15,7 +15,7 @@ let iframeUrl = '/editor.html';
 // 如果在 gh-pages 里面
 if (/^\/amis-editor-demo/.test(window.location.pathname)) {
     host += '/amis-editor';
-    iframeUrl = '/amis-editor' + iframeUrl;
+    iframeUrl = '/amis-editor-demo' + iframeUrl;
 }
 
 const schemaUrl = `${host}/schema.json`;
