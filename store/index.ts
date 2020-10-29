@@ -23,6 +23,7 @@ export const MainStore = types
         offScreen: false,
         addPageIsOpen: false,
         preview: false,
+        isMobile: false,
         schema: types.frozen()
     })
     .views(self => ({
@@ -81,6 +82,10 @@ export const MainStore = types
             self.preview = value;
         }
 
+        function setIsMobile(value: boolean) {
+            self.isMobile = value;
+        }
+
         return {
             toggleAsideFolded,
             toggleAsideFixed,
@@ -91,6 +96,7 @@ export const MainStore = types
             updatePageSchemaAt,
             updateSchema,
             setPreview,
+            setIsMobile,
             afterCreate() {
                 // persist store
                 if (typeof window !== 'undefined' && window.localStorage) {

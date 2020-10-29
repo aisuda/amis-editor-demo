@@ -10,10 +10,12 @@ import '../editor/MyRenderer';
 let currentIndex = -1;
 
 let host = `${window.location.protocol}//${window.location.host}`;
+let iframeUrl = '/editor.html';
 
 // 如果在 gh-pages 里面
-if (/^\/amis-editor/.test(window.location.pathname)) {
+if (/^\/amis-editor-demo/.test(window.location.pathname)) {
     host += '/amis-editor';
+    iframeUrl = '/amis-editor' + iframeUrl;
 }
 
 const schemaUrl = `${host}/schema.json`;
@@ -54,6 +56,16 @@ export default inject('store')(
                         />
                     </div>
 
+                    <div className="editor-preview">
+                        移动端{' '}
+                        <Switch
+                            value={store.isMobile}
+                            onChange={(value: boolean) => store.setIsMobile(value)}
+                            className="m-l-xs"
+                            inline
+                        />
+                    </div>
+
                     <div className="editor-header-btns">
                         <div className={cx('btn-item')} onClick={save}>
                             保存
@@ -76,6 +88,8 @@ export default inject('store')(
                     onChange={(value: any) => store.updateSchema(value)}
                     className="is-fixed"
                     $schemaUrl={schemaUrl}
+                    iframeUrl={iframeUrl}
+                    isMobile={store.isMobile}
                 />
             </Layout>
         );
