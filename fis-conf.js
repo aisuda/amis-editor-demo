@@ -68,7 +68,7 @@ fis.match('/mock/**.{json,js,conf}', {
 });
 
 fis.match('*.scss', {
-    parser: fis.plugin('node-sass', {
+    parser: fis.plugin('sass', {
         sourceMap: true
     }),
     rExt: '.css'
