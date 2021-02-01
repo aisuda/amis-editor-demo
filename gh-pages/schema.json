@@ -23229,6 +23229,10 @@
           "$ref": "#/definitions/SchemaApi",
           "description": "页面初始化的时候，可以设置一个 API 让其取拉取，发送数据会携带当前 data 数据（包含地址栏参数），获取得数据会合并到 data 中，供组件内使用。"
         },
+        "ws": {
+          "type": "string",
+          "description": "WebScocket 地址，用于实时获取数据"
+        },
         "body": {
           "$ref": "#/definitions/SchemaCollection",
           "description": "内容区域"
@@ -35565,6 +35569,10 @@
           "$ref": "#/definitions/SchemaApi",
           "description": "页面初始化的时候，可以设置一个 API 让其取拉取，发送数据会携带当前 data 数据（包含地址栏参数），获取得数据会合并到 data 中，供组件内使用。"
         },
+        "ws": {
+          "type": "string",
+          "description": "WebScocket 地址，用于实时获取数据"
+        },
         "body": {
           "$ref": "#/definitions/SchemaCollection",
           "description": "内容区域"
@@ -37526,7 +37534,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|label|labelClassName|popOver|quickEdit|copyable)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|label|labelClassName|popOver|quickEdit|copyable)$": {}
           }
         },
         {
@@ -41456,7 +41464,7 @@
           "$ref": "#/definitions/ServiceControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|controls|tabs|fieldSet|unique|columnClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|controls|tabs|fieldSet|unique|columnClassName)$": {}
           }
         },
         {
@@ -45399,7 +45407,7 @@
           "$ref": "#/definitions/ServiceControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|controls|tabs|fieldSet|columnClassName|columnRatio)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|controls|tabs|fieldSet|columnClassName|columnRatio)$": {}
           }
         },
         {
@@ -45786,7 +45794,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|tpl|text|popOver|quickEdit|copyable|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|tpl|text|popOver|quickEdit|copyable|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden)$": {}
           }
         },
         {
@@ -46160,7 +46168,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|label|fixed|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|label|fixed|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
           }
         },
         {
@@ -46534,7 +46542,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|label|labelClassName|popOver|quickEdit|copyable)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|label|labelClassName|popOver|quickEdit|copyable)$": {}
           }
         },
         {
@@ -46908,7 +46916,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|mode|horizontal|columnClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|mode|horizontal|columnClassName)$": {}
           }
         },
         {
@@ -47282,7 +47290,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|x|y|w|h|width|height|align|valign|gridClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|x|y|w|h|width|height|align|valign|gridClassName)$": {}
           }
         },
         {
@@ -47656,7 +47664,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|columnClassName|width|height|style)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|columnClassName|width|height|style)$": {}
           }
         },
         {
@@ -48030,7 +48038,7 @@
           "$ref": "#/definitions/ServiceSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|rowClassName|cellClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|api|ws|body|fetchOn|initFetch|initFetchOn|schemaApi|initFetchSchema|initFetchSchemaOn|interval|silentPolling|stopAutoRefreshWhen|messages|name|rowClassName|cellClassName)$": {}
           }
         },
         {
