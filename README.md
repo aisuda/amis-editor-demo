@@ -202,7 +202,7 @@ export class  MyRendererPlugin extends BasePlugin {
 
 定义好 plugin 后，可以有两种方式启用。
 
-```
+```tsx
 // 方式 1，注册默认插件，所有编辑器实例都会自动实例话。
 import {registerEditorPlugin} from 'amis-editor';
 
