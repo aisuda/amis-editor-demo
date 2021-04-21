@@ -28,7 +28,7 @@
     "dependencies": {
         "amis": "^1.1.6-beta.24",
         "amis-editor": "2.0.13",
-        "axios": "^0.19.0",
+        "axios": ">=0.21.1",
         "bootstrap": "3.4.1",
         "copy-to-clipboard": "^3.2.0",
         "mobx": "4.5.0",
