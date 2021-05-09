@@ -86,6 +86,10 @@ fis.match('amis/schema.json', {
     release: '/schema.json'
 });
 
+fis.match('markdown-it/**.js', {
+    preprocessor: fis.plugin('js-require-file')
+});
+
 fis.match('*.{jsx,tsx,ts}', {
     parser: [
         fis.plugin('typescript', {
@@ -101,14 +105,12 @@ fis.match('*.{jsx,tsx,ts}', {
             }
 
             // dynamic import 支持
-            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function (
-                _,
-                tslib,
-                quto,
-                value
-            ) {
-                return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
-            });
+            contents = contents.replace(
+                /return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g,
+                function (_, tslib, quto, value) {
+                    return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
+                }
+            );
 
             return contents;
         }
@@ -177,6 +179,17 @@ fis.match('monaco-editor/min/**.js', {
     ignoreDependencies: true
 });
 
+// 这些用了 esm
+fis.match('{echarts/extension/**.js, zrender/**.js}', {
+    parser: fis.plugin('typescript', {
+        sourceMap: true,
+        importHelpers: true,
+        esModuleInterop: true,
+        emitDecoratorMetadata: false,
+        experimentalDecorators: false
+    })
+});
+
 fis.media('dev')
     .match('/node_modules/**.js', {
         packTo: '/pkg/npm.js'
@@ -210,6 +223,18 @@ ghPages.match('*.{css,less,scss}', {
     useHash: true
 });
 
+ghPages.match('{echarts/extension/**.js,zrender/**.js,ansi-to-react/lib/index.js,highlight.js/**.js}', {
+    parser: [
+        fis.plugin('typescript', {
+            sourceMap: true,
+            importHelpers: true,
+            esModuleInterop: true,
+            emitDecoratorMetadata: false,
+            experimentalDecorators: false
+        })
+    ]
+});
+
 ghPages.match('::image', {
     useHash: true
 });
@@ -238,14 +263,12 @@ ghPages.match('{*.jsx,*.tsx,*.ts}', {
             }
 
             // dynamic import 支持
-            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function (
-                _,
-                tslib,
-                quto,
-                value
-            ) {
-                return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
-            });
+            contents = contents.replace(
+                /return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g,
+                function (_, tslib, quto, value) {
+                    return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
+                }
+            );
 
             return contents;
         }
