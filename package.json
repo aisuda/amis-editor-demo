@@ -33,9 +33,10 @@
         "copy-to-clipboard": "^3.2.0",
         "mobx": "4.5.0",
         "mobx-react": "5.2.8",
+        "mobx-state-tree": "^3.7.0",
         "qs": "6.5.1",
-        "react": "16.8.6",
-        "react-dom": "16.8.6",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
         "react-router": "5.0.1",
         "react-router-dom": "5.0.1"
     },
