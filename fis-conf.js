@@ -240,7 +240,7 @@ ghPages.match('::image', {
 });
 
 ghPages.match('*.{js,ts,tsx}', {
-    optimizer: fis.plugin('uglify-js'),
+    optimizer: fis.plugin('terser'),
     useHash: true
 });
 
@@ -280,7 +280,7 @@ ghPages.match('{*.jsx,*.tsx,*.ts,*.js}', {
     }
 });
 ghPages.match('*', {
-    domain: 'https://bce.bdstatic.com/fex/amis-editor-gh-pages',
+    // domain: 'https://bce.bdstatic.com/fex/amis-editor-gh-pages',
     deploy: [
         fis.plugin('skip-packed'),
         fis.plugin('local-deliver', {
