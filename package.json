@@ -8,8 +8,7 @@
         "start": "fis3 server start --www ./public --port 8082 --no-daemon",
         "server": "fis3 server start --www ./public --port 8082 --no-daemon",
         "dev": "fis3 release -cwd ./public",
-        "gh-pages": "rm -rf gh-pages && fis3 release gh-pages -c",
-        "deploy-gh-pages": "git subtree push --prefix gh-pages origin gh-pages"
+        "gh-pages": "rm -rf gh-pages && fis3 release gh-pages -c"
     },
     "repository": {
         "type": "git",
