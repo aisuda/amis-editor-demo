@@ -280,7 +280,7 @@ ghPages.match('{*.jsx,*.tsx,*.ts,*.js}', {
     }
 });
 ghPages.match('*', {
-    // domain: 'https://bce.bdstatic.com/fex/amis-editor-gh-pages',
+    domain: '/amis-editor-demo',
     deploy: [
         fis.plugin('skip-packed'),
         fis.plugin('local-deliver', {
