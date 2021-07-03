@@ -1,0 +1,29 @@
+<!-- htmlcs-disable -->
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Editor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
+        <!--DEPENDENCIES_INJECT_PLACEHOLDER-->
+        <link rel="stylesheet" href="amis/lib/themes/default.css" />
+        <link rel="stylesheet" href="amis-editor/dist/style.css" />
+        <link rel="stylesheet" href="./scss/style.scss" />
+    </head>
+
+    <body>
+        <div id="root" class="app-wrapper"></div>
+        <script src="./mod.js"></script>
+        <script type="text/javascript">
+            /* @require ./index.jsx 标记为同步依赖，提前加载 */
+            /* globals amis */
+            amis.require(['amis-editor', 'react-dom'], function (editor, reactDom) {
+                editor.mountInIframe(document.getElementById('root'), reactDom);
+            });
+        </script>
+    </body>
+</html>

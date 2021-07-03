@@ -6,8 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="@fortawesome/fontawesome-free/css/all.css" />
+        <link rel="stylesheet" href="@fortawesome/fontawesome-free/css/v4-shims.css" />
         <!--DEPENDENCIES_INJECT_PLACEHOLDER-->
         <link rel="stylesheet" href="amis/lib/themes/default.css" />
         <link rel="stylesheet" href="amis-editor/dist/style.css" />
@@ -21,7 +21,7 @@
             var _hmt = _hmt || [];
 
             // 百度统计
-            (function() {
+            (function () {
                 var hm = document.createElement('script');
                 hm.src = 'https://hm.baidu.com/hm.js?1f80f2c9dbe21dc3af239cf9eee90f1f';
                 var s = document.getElementsByTagName('script')[0];
@@ -29,7 +29,7 @@
             })();
 
             /* @require ./index.tsx 标记为同步依赖，提前加载 */
-            require(['./index.tsx'], function(app) {
+            amis.require(['./index.tsx'], function (app) {
                 var initialState = {};
                 app.bootstrap(document.getElementById('root'), initialState);
             });

@@ -62,3 +62,5 @@ typings/
 
 gh-pages
 /public
+
+package-lock.json
