@@ -94,14 +94,12 @@ fis.match('*.{jsx,tsx,ts}', {
             }
 
             // dynamic import 支持
-            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function (
-                _,
-                tslib,
-                quto,
-                value
-            ) {
-                return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
-            });
+            contents = contents.replace(
+                /return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g,
+                function (_, tslib, quto, value) {
+                    return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
+                }
+            );
 
             return contents;
         }
@@ -121,6 +119,17 @@ fis.match('tinymce/{tinymce.js,plugins/**.js,themes/silver/theme.js}', {
 
 fis.match('tinymce/plugins/*/index.js', {
     ignoreDependencies: false
+});
+
+// 这些用了 esm
+fis.match('{echarts/extension/**.js, zrender/**.js}', {
+    parser: fis.plugin('typescript', {
+        sourceMap: true,
+        importHelpers: true,
+        esModuleInterop: true,
+        emitDecoratorMetadata: false,
+        experimentalDecorators: false
+    })
 });
 
 fis.match('*.html:jsx', {
@@ -217,14 +226,12 @@ ghPages.match('{*.jsx,*.tsx,*.ts}', {
             }
 
             // dynamic import 支持
-            contents = contents.replace(/return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g, function (
-                _,
-                tslib,
-                quto,
-                value
-            ) {
-                return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
-            });
+            contents = contents.replace(
+                /return\s+(tslib_\d+)\.__importStar\(require\(('|")(.*?)\2\)\);/g,
+                function (_, tslib, quto, value) {
+                    return `return new Promise(function(resolve){require(['${value}'], function(ret) {resolve(${tslib}.__importStar(ret));})});`;
+                }
+            );
 
             return contents;
         }
