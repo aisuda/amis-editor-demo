@@ -25,7 +25,7 @@
     },
     "homepage": "https://github.com/fex-team/amis-editor-demo#readme",
     "dependencies": {
-        "amis": "1.2.3-beta.2",
+        "amis": "1.2.3-beta.3",
         "amis-editor": "3.0.7-beta.5",
         "@fortawesome/fontawesome-free": "^5.15.3",
         "axios": ">=0.21.1",
