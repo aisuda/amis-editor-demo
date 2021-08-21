@@ -44,8 +44,6 @@ export default inject('store')(
         function renderHeader() {
             return (
                 <div className="editor-header clearfix box-shadow bg-dark">
-                    <div className="navbar-brand text-lt font-thin">AMis 编辑器</div>
-
                     <div className="editor-preview">
                         预览{' '}
                         <Switch
