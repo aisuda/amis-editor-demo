@@ -17,7 +17,7 @@ export const MainStore = types
                 }
             }
         ]),
-        theme: 'default',
+        theme: 'cxd',
         asideFixed: true,
         asideFolded: false,
         offScreen: false,
