@@ -1,19 +1,13 @@
 /**
- * @file: mod.js
- * @author fis
- * ver: 1.0.13
- * update: 2016/01/27
- * https://github.com/fex-team/mod
+ * @file 模块加载器，改成私有化的了，慎用。
  */
-var require;
-
-/* eslint-disable no-unused-vars */
-var define;
+/* eslint-disable */
 
 (function (global) {
-
+    var require, define;
+    var amis = window.amis || {};
     // 避免重复加载而导致已定义模块丢失
-    if (require) {
+    if (amis.require) {
         return;
     }
 
@@ -26,7 +20,6 @@ var define;
     var pkgMap = {};
 
     var createScripts = function (queues, onerror) {
-
         var docFrag = document.createDocumentFragment();
 
         for (var i = 0, len = queues.length; i < len; i++) {
@@ -57,8 +50,7 @@ var define;
 
                     if ('onload' in script) {
                         script.onload = onload;
-                    }
-                    else {
+                    } else {
                         script.onreadystatechange = function () {
                             if (this.readyState === 'loaded' || this.readyState === 'complete') {
                                 onload();
@@ -92,8 +84,7 @@ var define;
 
             if (pkg) {
                 url = pkgMap[pkg].url || pkgMap[pkg].uri;
-            }
-            else {
+            } else {
                 url = res.url || res.uri || id;
             }
 
@@ -106,10 +97,7 @@ var define;
         createScripts(queues, onerror);
     };
 
-    define = function (id, factory) {
-        id = id.replace(/\.js$/i, '');
-        factoryMap[id] = factory;
-
+    var runQueue = function (id) {
         var queue = loadingMap[id];
         if (queue) {
             for (var i = 0, n = queue.length; i < n; i++) {
@@ -119,8 +107,46 @@ var define;
         }
     };
 
-    require = function (id) {
+    define = function (id, factory) {
+        id = id.replace(/\.js$/i, '');
+        factoryMap[id] = factory;
 
+        if (~factory.toString().indexOf('__mod__async__load')) {
+            var mod = {exports: {}};
+            factoryMap[id] = {
+                deffer: true,
+                callbacks: [],
+                loaded: false,
+                load: function () {}
+            };
+            factory.apply(mod, [require, mod.exports, mod]);
+            var load = mod.exports.__mod__async__load;
+            factoryMap[id].load = function () {
+                if (this.loaded) {
+                    return;
+                }
+                this.loaded = true;
+
+                load(function (ret) {
+                    var callbacks = factoryMap[id].callbacks;
+                    factoryMap[id] = function () {
+                        return ret;
+                    };
+                    callbacks.forEach(function (fn) {
+                        fn();
+                    });
+                    runQueue(id);
+                });
+            };
+            if (loadingMap[id] && loadingMap[id].length) {
+                factoryMap[id].load();
+            }
+        } else {
+            runQueue(id);
+        }
+    };
+
+    require = function (id) {
         // compatible with require([dep, dep2...]) syntax.
         if (id && id.splice) {
             return require.async.apply(this, arguments);
@@ -148,7 +174,7 @@ var define;
         //
         // factory: function OR value
         //
-        var ret = (typeof factory === 'function') ? factory.apply(mod, [require, mod.exports, mod]) : factory;
+        var ret = typeof factory === 'function' ? factory.apply(mod, [require, mod.exports, mod]) : factory;
 
         if (ret) {
             mod.exports = ret;
@@ -182,6 +208,12 @@ var define;
                 needMap[dep] = true;
 
                 if (dep in factoryMap) {
+                    if (factoryMap[dep] && factoryMap[dep].deffer) {
+                        needNum++;
+                        factoryMap[dep].callbacks.push(updateNeed);
+                        factoryMap[dep].load();
+                    }
+
                     // check whether loaded resource's deps is loaded or not
                     child = resMap[dep] || resMap[dep + '.js'];
                     if (child && 'deps' in child) {
@@ -253,30 +285,8 @@ var define;
         script.type = 'text/javascript';
         script.src = url;
         head.appendChild(script);
+        return script;
     };
-
-    require.loadCss = function (cfg) {
-        if (cfg.content) {
-            var sty = document.createElement('style');
-            sty.type = 'text/css';
-
-            if (sty.styleSheet) { // IE
-                sty.styleSheet.cssText = cfg.content;
-            }
-            else {
-                sty.innerHTML = cfg.content;
-            }
-            head.appendChild(sty);
-        }
-        else if (cfg.url) {
-            var link = document.createElement('link');
-            link.href = cfg.url;
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            head.appendChild(link);
-        }
-    };
-
 
     require.alias = function (id) {
         return id.replace(/\.js$/i, '');
@@ -284,4 +294,8 @@ var define;
 
     require.timeout = 5000;
 
+    amis.require = require;
+    amis.define = define;
+    window.amis = amis;
+    // window.require = window.require || require;
 })(this);

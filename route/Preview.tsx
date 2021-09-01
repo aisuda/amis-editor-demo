@@ -19,33 +19,11 @@ function isActive(link: any, location: any) {
 }
 
 export default inject('store')(
-    observer(function({store, location, history}: {store: IMainStore} & RouteComponentProps) {
+    observer(function ({store, location, history}: {store: IMainStore} & RouteComponentProps) {
         function renderHeader() {
             return (
                 <div>
-                    <div className={`a-Layout-brandBar`}>
-                        <button onClick={store.toggleOffScreen} className="pull-right visible-xs">
-                            <i className="glyphicon glyphicon-align-justify"></i>
-                        </button>
-                        <div className={`a-Layout-brand`}>
-                            <i className="fa fa-paw"></i>
-                            <span className="hidden-folded m-l-sm">AMIS 编辑器</span>
-                        </div>
-                    </div>
                     <div className={`a-Layout-headerBar`}>
-                        <div className="nav navbar-nav hidden-xs">
-                            <Button
-                                level="link"
-                                className="no-shadow navbar-btn"
-                                onClick={store.toggleAsideFolded}
-                                tooltip="展开或收起侧边栏"
-                                placement="bottom"
-                                iconOnly
-                            >
-                                <i className={store.asideFolded ? 'fa fa-indent' : 'fa fa-dedent'} />
-                            </Button>
-                        </div>
-
                         <div className="hidden-xs p-t-sm pull-right">
                             <Button size="sm" className="m-r-xs" level="success" disabled disabledTip="Todo...">
                                 全部导出
