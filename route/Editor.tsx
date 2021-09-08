@@ -80,7 +80,7 @@ export default inject('store')(
         return (
             <Layout header={renderHeader()} headerFixed={false}>
                 <Editor
-                    theme={'default'}
+                    theme={'cxd'}
                     preview={store.preview}
                     value={store.schema}
                     onChange={(value: any) => store.updateSchema(value)}

@@ -11,8 +11,8 @@ export default observer(function ({store}: {store: IMainStore}) {
     return (
         <Router>
             <div className="routes-wrapper">
-                <ToastComponent key="toast" position={'top-right'} theme="cxd" />
-                <AlertComponent key="alert" theme="cxd" />
+                <ToastComponent key="toast" position={'top-right'} />
+                <AlertComponent key="alert" />
                 <React.Suspense fallback={<Spinner overlay className="m-t-lg" size="lg" />}>
                     <Switch>
                         <Redirect to={`/hello-world`} from={`/`} exact />
