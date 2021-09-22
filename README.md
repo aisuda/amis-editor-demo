@@ -74,7 +74,7 @@ export default class MyRenderer extends React.Component<MyRendererProps> {
 }
 ```
 
-然开开始注册编辑器。
+然后开始注册编辑器。
 
 ```tsx
 import {RendererEditor, BasicEditor} from 'amis-editor';
