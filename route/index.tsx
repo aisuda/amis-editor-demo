@@ -7,12 +7,12 @@ import {IMainStore} from '../store';
 const Preview = React.lazy(() => import('./Preview'));
 const Editor = React.lazy(() => import('./Editor'));
 
-export default observer(function({store}: {store: IMainStore}) {
+export default observer(function ({store}: {store: IMainStore}) {
     return (
         <Router>
             <div className="routes-wrapper">
-                <ToastComponent key="toast" position={'top-right'} theme={store.theme} />
-                <AlertComponent key="alert" theme={store.theme} />
+                <ToastComponent key="toast" position={'top-right'} />
+                <AlertComponent key="alert" />
                 <React.Suspense fallback={<Spinner overlay className="m-t-lg" size="lg" />}>
                     <Switch>
                         <Redirect to={`/hello-world`} from={`/`} exact />

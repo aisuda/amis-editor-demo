@@ -23,15 +23,6 @@ export default inject('store')(
         function renderHeader() {
             return (
                 <div>
-                    <div className={`a-Layout-brandBar`}>
-                        <button onClick={store.toggleOffScreen} className="pull-right visible-xs">
-                            <i className="glyphicon glyphicon-align-justify"></i>
-                        </button>
-                        <div className={`a-Layout-brand`}>
-                            <i className="fa fa-paw"></i>
-                            <span className="hidden-folded m-l-sm">AMIS 编辑器</span>
-                        </div>
-                    </div>
                     <div className={`a-Layout-headerBar`}>
                         <div className="hidden-xs p-t-sm pull-right">
                             <Button size="sm" className="m-r-xs" level="success" disabled disabledTip="Todo...">
