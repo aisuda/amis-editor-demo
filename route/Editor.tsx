@@ -5,7 +5,7 @@ import {IMainStore} from '../store';
 import {RouteComponentProps} from 'react-router-dom';
 import {Layout, Switch, classnames as cx, toast} from 'amis';
 import '../renderer/MyRenderer';
-import '../editor/MyRenderer';
+import '../plugins/MyRendererPlugin';
 
 let currentIndex = -1;
 
