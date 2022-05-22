@@ -5,6 +5,7 @@ import {RouteComponentProps} from 'react-router-dom';
 import {toast} from 'amis';
 import {Icon} from '../icons/index';
 import {IMainStore} from '../store';
+import '../editor/DisabledEditorPlugin'; // 用于隐藏一些不需要的Editor预置组件
 import '../renderer/MyRenderer';
 import '../editor/MyRenderer';
 
