@@ -3,7 +3,7 @@ import {RendererEventContext, SubRendererInfo, BasicSubRenderInfo, PluginInterfa
 
 /**
  * 用于隐藏一些不需要的Editor组件
- * 备注: 如果不知道当前Editor中有哪些预置组件，可以在这里设置一个断点，congsole.log 看一下 renderers。
+ * 备注: 如果不知道当前Editor中有哪些预置组件，可以在这里设置一个断点，console.log 看一下 renderers。
  */
 
 // 需要在组件面板中隐藏的组件
