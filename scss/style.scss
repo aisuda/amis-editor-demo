@@ -1,3 +1,16 @@
+
+$editor-default-color: #151b26; // 默认的字体色
+$editor-active-color: #2468f2;
+$editor-hover-color: #5086f5;
+$editor-border-color: #e8e9eb; // 默认的边框色
+$default-icon-color: #84868c; // 默认的icon颜色
+
+$active-bg-color: #e6f0ff; // 激活态的背景色
+$hover-bg-color: #f7f7f9; // 激活态的背景色
+
+$disabled-color: #b8babf; // 禁用文字颜色
+$disabled-bg-color: #f7f7f9; // 禁用背景颜色
+
 html {
     font-size: 16px;
 }
@@ -19,70 +32,222 @@ html {
     margin-right: 30px;
 }
 
-.editor-header {
+.Editor-Demo {
+  position: relative;
+  height: 100vh;
+  min-height: 510px;
+  display: flex;
+  flex-direction: column;
+
+  .Editor-header {
+    flex: 0 0 48px;
     position: relative;
-    text-align: right;
+    background: #fff;
+    // box-shadow: 0 2px 7px 0 rgba(232,232,232,0.50);
+    display: flex;
+    border-bottom: 1px solid $editor-border-color;
+    box-sizing: border-box;
+    z-index: 1000;
 
-    .navbar-brand {
-        float: left !important;
+    svg {
+      display: inline-block;
+      width: 16px;
     }
 
-    > .editor-preview {
-        display: inline-block;
-        line-height: 50px;
-        margin-right: 15px;
-        color: #c1c4c9;
+    .Editor-title {
+      flex: 1 1 565px;
+      padding: 0 15px;
+      font-family: PingFangSC-Medium;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0;
+      user-select: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
-}
 
-.editor-header-btns {
-    display: inline-block;
-    white-space: nowrap;
-
-    > .btn-item {
+    .Editor-view-mode-group-container {
+      flex: 0 1 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .Editor-view-mode-group {
+        font-size: 14px;
+        font-family: PingFangSC-Regular;
+        // color: #fff;
+        letter-spacing: 0;
+        text-align: center;
+        width: 100px;
+        height: 32px;
+        border-radius: 4px;
+        font-weight: 400;
+        background-color: #f2f2f4;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        .Editor-view-mode-btn {
+          user-select: none;
+          padding: 0;
+          border-radius: 4px;
+          width: 40px;
+          height: 24px;
+          cursor: pointer;
+          transition: transform ease-out 0.2s;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+  
+          svg {
+            color: $editor-default-color;
+          }
+  
+          &:first-child {
+            margin-right: 12px;
+          }
+  
+          &:hover > svg {
+            color: $editor-active-color;
+          }
+  
+          &.is-active {
+            background: $editor-active-color;
+  
+            svg {
+              color: #fff;
+            }
+  
+            &:hover {
+              background: #5086f5;
+            }
+          }
+        }
+      }
+    }
+  
+    .Editor-header-actions {
+      flex: 1 1 565px;
+      padding: 0 24px;
+      font-size: 12px;
+      white-space: nowrap;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  
+      .header-action-item {
+        margin-left: 18px;
         user-select: none;
         cursor: pointer;
-        display: inline-block;
-        border-left: 1px solid #595c65;
-        line-height: 50px;
-        padding: 0 20px;
-        color: #c1c4c9;
-
+        transition: transform ease-out 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+  
         > svg {
-            display: inline-block;
-            fill: #c1c4c9;
-            width: 20px;
-            position: relative;
-            top: 4px;
+          width: 16px;
+          fill: $editor-default-color;
         }
-
-        &:hover {
-            color: #fff;
-            background-color: rgb(46, 50, 67);
-
-            > svg {
-                fill: #fff;
-            }
+  
+        &:hover > svg {
+          fill: $editor-active-color;
         }
-
+  
         &.disabled {
-            color: #8b8e99;
-            pointer-events: none;
-            cursor: default;
-
-            > svg {
-                fill: #8b8e99;
-            }
+          cursor: not-allowed;
+  
+          > svg {
+            fill: $disabled-color;
+          }
         }
+  
+        // 历史记录icon单独处理
+        > svg.icon-editor-history {
+          color: $editor-default-color;
+  
+          &:hover {
+            color: $editor-active-color;
+          }
+  
+          &.disabled,
+          &.disabled:hover {
+            cursor: not-allowed;
+            color: $disabled-color;
+          }
+        }
+      }
+  
+      .header-action-btn {
+        margin-left: 8px;
+        user-select: none;
+        cursor: pointer;
+        padding: 0 16px;
+        min-width: 72px;
+        height: 32px;
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        font-weight: 400;
+        background: $editor-active-color;
+        border-color: 1px solid $editor-active-color;
+        border-radius: 4px;
+        transition: transform ease-out 0.2s;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+  
+        &.preview-btn {
+          color: #151a26;
+          border: 1px solid #dadbdd;
+          background: #fff;
+          border-radius: 4px;
+  
+          &:hover {
+            color: $editor-active-color;
+            border-color: $editor-active-color;
+            background: #fff;
+          }
+        }
+  
+        &:hover {
+          color: #fff;
+          background: $editor-hover-color;
+          border-color: $editor-hover-color;
+        }
+  
+        &.disabled {
+          cursor: not-allowed;
+          color: $disabled-color;
+          background-color: $disabled-bg-color;
+          border-color: $disabled-bg-color;
+        }
+
+        &.exit-btn {
+          background-color: #fff;
+          border: 1px solid #ccc;
+          color: #332e2e;
+
+          &:hover {
+            color: #fff;
+            background: #fa541c;
+            border-color: #fa541c
+          }
+        }
+      }
+  
+      .margin-left-space {
+        margin-left: 136px;
+      }
     }
-}
-
-.ae-Editor.is-fixed .ae-Settings-inner .ae-Editor-config-tab > .tab-content,
-.ae-Editor.is-fixed .ae-Settings-inner .ae-Editor-code-tab > .tab-content {
-    bottom: 50px;
-}
-
-.editor-verions {
-    max-height: 100%;
-    overflow: auto;
+  }
+  .Editor-inner {
+    position: relative;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }

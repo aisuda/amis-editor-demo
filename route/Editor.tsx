@@ -1,9 +1,10 @@
 import React from 'react';
 import {Editor} from 'amis-editor';
 import {inject, observer} from 'mobx-react';
-import {IMainStore} from '../store';
 import {RouteComponentProps} from 'react-router-dom';
-import {Layout, Switch, classnames as cx, toast} from 'amis';
+import {toast} from 'amis';
+import {Icon} from '../icons/index';
+import {IMainStore} from '../store';
 import '../renderer/MyRenderer';
 import '../editor/MyRenderer';
 
@@ -41,55 +42,70 @@ export default inject('store')(
             history.push(`/${store.pages[index].path}`);
         }
 
-        function renderHeader() {
-            return (
-                <div className="editor-header clearfix box-shadow bg-dark">
-                    <div className="editor-preview">
-                        预览{' '}
-                        <Switch
-                            value={store.preview}
-                            onChange={(value: boolean) => store.setPreview(value)}
-                            className="m-l-xs"
-                            inline
-                        />
+        return (
+            <div className="Editor-Demo">
+                <div className="Editor-header">
+                    <div className="Editor-title">amis 可视化编辑器</div>
+                    <div className="Editor-view-mode-group-container">
+                      <div className="Editor-view-mode-group">
+                      <div
+                        className={`Editor-view-mode-btn ${
+                          !store.isMobile ? 'is-active' : ''
+                        }`}
+                        onClick={() => {
+                          store.setIsMobile(false);
+                        }}
+                      >
+                        <Icon icon="pc-preview" title="PC模式" />
+                      </div>
+                      <div
+                        className={`Editor-view-mode-btn ${
+                          store.isMobile ? 'is-active' : ''
+                        }`}
+                        onClick={() => {
+                          store.setIsMobile(true);
+                        }}
+                      >
+                        <Icon icon="h5-preview" title="移动模式" />
+                      </div>
+                      </div>
                     </div>
-
-                    <div className="editor-preview">
-                        移动端{' '}
-                        <Switch
-                            value={store.isMobile}
-                            onChange={(value: boolean) => store.setIsMobile(value)}
-                            className="m-l-xs"
-                            inline
-                        />
+        
+                    <div className="Editor-header-actions">
+                    <div
+                      className={`header-action-btn margin-left-space ${
+                        store.preview ? 'primary' : ''
+                      }`}
+                      onClick={() => {
+                        store.setPreview(!store.preview)
+                      }}
+                    >
+                      {store.preview ? '编辑' : '预览'}
                     </div>
-
-                    <div className="editor-header-btns">
-                        <div className={cx('btn-item')} onClick={save}>
-                            保存
-                        </div>
-
-                        <div className="btn-item" onClick={exit}>
-                            退出
-                        </div>
+                    <div
+                      className={`header-action-btn exit-btn`}
+                      onClick={exit}
+                    >退出</div>
                     </div>
                 </div>
-            );
-        }
-
-        return (
-            <Layout header={renderHeader()} headerFixed={false}>
+                <div className="Editor-inner">
                 <Editor
                     theme={'cxd'}
                     preview={store.preview}
+                    isMobile={store.isMobile}
                     value={store.schema}
                     onChange={(value: any) => store.updateSchema(value)}
+                    onPreview={() => {
+                      store.setPreview(true)
+                    }}
+                    onSave={save}
                     className="is-fixed"
                     $schemaUrl={schemaUrl}
                     iframeUrl={iframeUrl}
-                    isMobile={store.isMobile}
+                    showCustomRenderersPanel={true}
                 />
-            </Layout>
+                </div>
+            </div>
         );
     })
 );

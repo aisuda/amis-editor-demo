@@ -62,6 +62,28 @@ fis.get('project.ignore').push('public/**', 'gh-pages/**');
 
 fis.set('project.files', ['*.html', 'mock/**']);
 
+fis.match('/icons/**.svg', {
+    rExt: '.js',
+    isJsXLike: true,
+    isJsLike: true,
+    isMod: true,
+    parser: [
+        fis.plugin('svgr', {
+            svgProps: {
+                className: 'icon'
+            },
+            prettier: false,
+            dimensions: false
+        }),
+        fis.plugin('typescript', {
+            importHelpers: true,
+            esModuleInterop: true,
+            experimentalDecorators: true,
+            sourceMap: false
+        })
+    ]
+});
+
 fis.match('/mock/**.{json,js,conf}', {
     // isMod: false,
     useCompile: false
