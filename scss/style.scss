@@ -1,4 +1,3 @@
-
 $editor-default-color: #151b26; // 默认的字体色
 $editor-active-color: #2468f2;
 $editor-hover-color: #5086f5;
@@ -12,24 +11,24 @@ $disabled-color: #b8babf; // 禁用文字颜色
 $disabled-bg-color: #f7f7f9; // 禁用背景颜色
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .app-wrapper,
 .routes-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .navbtn {
-    float: right;
-    margin: 3px;
-    visibility: visible;
+  float: right;
+  margin: 3px;
+  visibility: visible;
 }
 
 .a-Tabs--line > .a-Tabs-links > li > a:first-child {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .Editor-Demo {
@@ -72,7 +71,7 @@ html {
       display: flex;
       justify-content: center;
       align-items: center;
-  
+
       .Editor-view-mode-group {
         font-size: 14px;
         font-family: PingFangSC-Regular;
@@ -84,11 +83,11 @@ html {
         border-radius: 4px;
         font-weight: 400;
         background-color: #f2f2f4;
-  
+
         display: flex;
         justify-content: center;
         align-items: center;
-  
+
         .Editor-view-mode-btn {
           user-select: none;
           padding: 0;
@@ -100,26 +99,26 @@ html {
           display: inline-flex;
           justify-content: center;
           align-items: center;
-  
+
           svg {
             color: $editor-default-color;
           }
-  
+
           &:first-child {
             margin-right: 12px;
           }
-  
+
           &:hover > svg {
             color: $editor-active-color;
           }
-  
+
           &.is-active {
             background: $editor-active-color;
-  
+
             svg {
               color: #fff;
             }
-  
+
             &:hover {
               background: #5086f5;
             }
@@ -127,7 +126,7 @@ html {
         }
       }
     }
-  
+
     .Editor-header-actions {
       flex: 1 1 565px;
       padding: 0 24px;
@@ -136,7 +135,7 @@ html {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-  
+
       .header-action-item {
         margin-left: 18px;
         user-select: none;
@@ -146,32 +145,32 @@ html {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-  
+
         > svg {
           width: 16px;
           fill: $editor-default-color;
         }
-  
+
         &:hover > svg {
           fill: $editor-active-color;
         }
-  
+
         &.disabled {
           cursor: not-allowed;
-  
+
           > svg {
             fill: $disabled-color;
           }
         }
-  
+
         // 历史记录icon单独处理
         > svg.icon-editor-history {
           color: $editor-default-color;
-  
+
           &:hover {
             color: $editor-active-color;
           }
-  
+
           &.disabled,
           &.disabled:hover {
             cursor: not-allowed;
@@ -179,7 +178,7 @@ html {
           }
         }
       }
-  
+
       .header-action-btn {
         margin-left: 8px;
         user-select: none;
@@ -199,26 +198,26 @@ html {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-  
+
         &.preview-btn {
           color: #151a26;
           border: 1px solid #dadbdd;
           background: #fff;
           border-radius: 4px;
-  
+
           &:hover {
             color: $editor-active-color;
             border-color: $editor-active-color;
             background: #fff;
           }
         }
-  
+
         &:hover {
           color: #fff;
           background: $editor-hover-color;
           border-color: $editor-hover-color;
         }
-  
+
         &.disabled {
           cursor: not-allowed;
           color: $disabled-color;
@@ -234,11 +233,11 @@ html {
           &:hover {
             color: #fff;
             background: #fa541c;
-            border-color: #fa541c
+            border-color: #fa541c;
           }
         }
       }
-  
+
       .margin-left-space {
         margin-left: 136px;
       }

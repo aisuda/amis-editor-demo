@@ -6,5 +6,5 @@ import ReactDom from 'react-dom';
 import App from './App';
 
 export function bootstrap(mountTo: HTMLElement) {
-    ReactDom.render(<App />, mountTo);
+  ReactDom.render(<App />, mountTo);
 }

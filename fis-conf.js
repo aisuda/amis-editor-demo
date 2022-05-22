@@ -34,7 +34,11 @@ const packConfig = {
         '!echarts/**',
         '!amis-editor/**'
     ],
-    'pkg/rich-text.js': ['amis/lib/components/RichText.js', 'froala-editor/**', 'jquery/**'],
+    'pkg/rich-text.js': [
+        'amis/lib/components/RichText.js',
+        'froala-editor/**',
+        'jquery/**'
+    ],
     'pkg/echarts.js': ['zrender/**', 'echarts/**'],
     'pkg/api-mock.js': ['mock/*.ts'],
     'pkg/app.js': ['/App.tsx', '/App.tsx:deps'],
@@ -53,7 +57,13 @@ const packConfig = {
         '!amis-editor/**'
     ],
     // css 打包
-    'pkg/style.css': ['node_modules/*/**.css', '*.scss', '!/scss/*.scss', '/scss/*.scss', '!monaco-editor/**']
+    'pkg/style.css': [
+        'node_modules/*/**.css',
+        '*.scss',
+        '!/scss/*.scss',
+        '/scss/*.scss',
+        '!monaco-editor/**'
+    ]
 };
 
 fis.get('project.ignore').push('public/**', 'gh-pages/**');
@@ -194,7 +204,10 @@ fis.on('compile:optimizer', function (file) {
     if (file.isJsLike && file.isMod) {
         var contents = file.getContent();
 
-        if (typeof contents === 'string' && contents.substring(0, 7) === 'define(') {
+        if (
+            typeof contents === 'string' &&
+            contents.substring(0, 7) === 'define('
+        ) {
             contents = 'amis.' + contents;
 
             contents = contents.replace(
@@ -256,17 +269,20 @@ ghPages.match('*.{css,less,scss}', {
     useHash: true
 });
 
-ghPages.match('{echarts/extension/**.js,zrender/**.js,ansi-to-react/lib/index.js,highlight.js/**.js}', {
-    parser: [
-        fis.plugin('typescript', {
-            sourceMap: true,
-            importHelpers: true,
-            esModuleInterop: true,
-            emitDecoratorMetadata: false,
-            experimentalDecorators: false
-        })
-    ]
-});
+ghPages.match(
+    '{echarts/extension/**.js,zrender/**.js,ansi-to-react/lib/index.js,highlight.js/**.js}',
+    {
+        parser: [
+            fis.plugin('typescript', {
+                sourceMap: true,
+                importHelpers: true,
+                esModuleInterop: true,
+                emitDecoratorMetadata: false,
+                experimentalDecorators: false
+            })
+        ]
+    }
+);
 
 ghPages.match('::image', {
     useHash: true
