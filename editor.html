@@ -19,8 +19,10 @@
         <script src="./mod.js"></script>
         <script type="text/javascript">
             /* @require ./index.jsx 标记为同步依赖，提前加载 */
+
+            // 备注: 需要带上自定义组件，避免移动端渲染异常
             /* globals amis */
-            amis.require(['amis-editor', 'react-dom'], function (editor, reactDom) {
+            amis.require(['amis-editor', 'react-dom', './renderer/MyRenderer'], function (editor, reactDom) {
                 editor.mountInIframe(document.getElementById('root'), reactDom);
             });
         </script>
