@@ -95,7 +95,7 @@ export default class MyRendererEditor extends BasicEditor {
     tipName = '自定义组件';
     settingsSchema = {
         title: '自定义组件配置',
-        controls: [
+        body: [
             {
                 type: 'tabs',
                 tabsMode: 'line',
