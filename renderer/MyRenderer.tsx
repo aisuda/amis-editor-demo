@@ -1,5 +1,5 @@
 import {Renderer} from 'amis';
-import {RendererProps} from 'amis/lib/factory';
+import {RendererProps} from 'amis';
 import React from 'react';
 
 export interface MyRendererProps extends RendererProps {
