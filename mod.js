@@ -303,5 +303,5 @@
   amis.require = require;
   amis.define = define;
   window.amis = amis;
-  // window.require = window.require || require;
+  window.require = window.require || require;
 })(this);
