@@ -35,6 +35,7 @@ const packConfig = {
         '!amis-editor/**'
     ],
     'pkg/rich-text.js': [
+        '/mod.js',
         'amis/lib/components/RichText.js',
         'froala-editor/**',
         'jquery/**'
