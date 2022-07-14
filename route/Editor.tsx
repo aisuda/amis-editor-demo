@@ -110,6 +110,12 @@ export default inject('store')(
             $schemaUrl={schemaUrl}
             iframeUrl={iframeUrl}
             showCustomRenderersPanel={true}
+            amisEnv={{
+              fetcher: store.fetcher,
+              notify: store.notify,
+              alert: store.alert,
+              copy: store.copy,
+            }}
           />
         </div>
       </div>

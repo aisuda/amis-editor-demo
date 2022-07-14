@@ -10,9 +10,9 @@ export default function (): JSX.Element {
   const store = ((window as any).store = MainStore.create(
     {},
     {
-      fetcher: ({url, method, data, config}: any) => {
+      fetcher: ({url, method, data, config, headers}: any) => {
         config = config || {};
-        config.headers = config.headers || {};
+        config.headers = config.headers || headers || {};
         config.withCredentials = true;
 
         if (method !== 'post' && method !== 'put' && method !== 'patch') {

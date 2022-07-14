@@ -195,6 +195,10 @@ export function schema2component(
             params: match.params
           }),
           ...rest,
+          fetcher: store.fetcher,
+          notify: store.notify,
+          alert: store.alert,
+          copy: store.copy,
           propsTransform: transform
         },
         this.getEnv()
