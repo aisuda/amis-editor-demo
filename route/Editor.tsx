@@ -1,5 +1,5 @@
 import React from 'react';
-import {Editor} from 'amis-editor'; // ShortcutKey  <ShortcutKey />
+import {Editor, ShortcutKey} from 'amis-editor';
 import {inject, observer} from 'mobx-react';
 import {RouteComponentProps} from 'react-router-dom';
 import {toast} from 'amis';
@@ -78,6 +78,7 @@ export default inject('store')(
           </div>
 
           <div className="Editor-header-actions">
+            <ShortcutKey />
             <div
               className={`header-action-btn margin-left-space ${
                 store.preview ? 'primary' : ''
