@@ -44,6 +44,11 @@ export default inject('store')(
       toast.success('保存成功', '提示');
     }
 
+    function onChange(value: any) {
+      store.updateSchema(value);
+      store.updatePageSchemaAt(index);
+    }
+
     function exit() {
       history.push(`/${store.pages[index].path}`);
     }
@@ -102,7 +107,7 @@ export default inject('store')(
             preview={store.preview}
             isMobile={store.isMobile}
             value={store.schema}
-            onChange={(value: any) => store.updateSchema(value)}
+            onChange={onChange}
             onPreview={() => {
               store.setPreview(true);
             }}
