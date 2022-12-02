@@ -2,7 +2,8 @@ import React from 'react';
 import {Editor, ShortcutKey} from 'amis-editor';
 import {inject, observer} from 'mobx-react';
 import {RouteComponentProps} from 'react-router-dom';
-import {toast} from 'amis';
+import {toast,Select} from 'amis';
+import {currentLocale} from 'i18n-runtime';
 import {Icon} from '../icons/index';
 import {IMainStore} from '../store';
 import '../editor/DisabledEditorPlugin'; // 用于隐藏一些不需要的Editor预置组件
@@ -22,6 +23,17 @@ if (/^\/amis-editor-demo/.test(window.location.pathname)) {
 
 const schemaUrl = `${host}/schema.json`;
 
+const editorLanguages = [
+  {
+    label: '简体中文',
+    value: 'zh-CN'
+  },
+  {
+    label: 'English',
+    value: 'en-US'
+  }
+];
+
 // @ts-ignore
 __uri('amis/schema.json');
 
@@ -33,6 +45,7 @@ export default inject('store')(
     match
   }: {store: IMainStore} & RouteComponentProps<{id: string}>) {
     const index: number = parseInt(match.params.id, 10);
+    const curLanguage = currentLocale(); // 获取当前语料类型
 
     if (index !== currentIndex) {
       currentIndex = index;
@@ -49,6 +62,11 @@ export default inject('store')(
       store.updatePageSchemaAt(index);
     }
 
+    function changeLocale(value: string) {
+      localStorage.setItem('suda-i18n-locale', value);
+      window.location.reload();
+    }
+
     function exit() {
       history.push(`/${store.pages[index].path}`);
     }
@@ -60,7 +78,7 @@ export default inject('store')(
           <div className="Editor-view-mode-group-container">
             <div className="Editor-view-mode-group">
               <div
-                className={`Editor-view-mode-btn ${
+                className={`Editor-view-mode-btn editor-header-icon ${
                   !store.isMobile ? 'is-active' : ''
                 }`}
                 onClick={() => {
@@ -70,7 +88,7 @@ export default inject('store')(
                 <Icon icon="pc-preview" title="PC模式" />
               </div>
               <div
-                className={`Editor-view-mode-btn ${
+                className={`Editor-view-mode-btn editor-header-icon ${
                   store.isMobile ? 'is-active' : ''
                 }`}
                 onClick={() => {
@@ -84,8 +102,15 @@ export default inject('store')(
 
           <div className="Editor-header-actions">
             <ShortcutKey />
+            <Select
+              className='margin-left-space'
+              options={editorLanguages}
+              value={curLanguage}
+              clearable={false}
+              onChange={(e: any) => changeLocale(e.value)}
+            />
             <div
-              className={`header-action-btn margin-left-space ${
+              className={`header-action-btn m-1 ${
                 store.preview ? 'primary' : ''
               }`}
               onClick={() => {
