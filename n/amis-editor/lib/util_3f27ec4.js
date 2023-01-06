@@ -1,0 +1,1 @@
+amis.define("e750bfd",(function(e,t,u,a){"use strict";function n(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),e("849c8c1"),e("167c905"),e("8beedab");var f=n(e("4930ed8"));t.isAuto=function(e){return!!(e&&f.default(e)&&/^((a)|(au)|(aut)|(auto))$/.test(e))}}));
