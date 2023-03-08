@@ -157,6 +157,10 @@ fis.match('amis/**.js', {
     preprocessor: fis.plugin('js-require-css')
 });
 
+fis.match('amis-editor/**.js', {
+    preprocessor: fis.plugin('js-require-css')
+});
+
 fis.match('tinymce/{tinymce.js,plugins/**.js,themes/silver/theme.js}', {
     ignoreDependencies: true
 });
