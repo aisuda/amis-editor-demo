@@ -4,7 +4,7 @@ import {inject, observer} from 'mobx-react';
 import {getEnv} from 'mobx-state-tree';
 import {IMainStore} from '../store';
 import qs from 'qs';
-import {render, utils, filter} from 'amis';
+import {render as amisRender, utils, filter} from 'amis';
 
 export function schema2component(
   schema: any,
@@ -13,6 +13,7 @@ export function schema2component(
 ) {
   interface SchemaRendererProps extends RouteComponentProps<{}> {
     store: IMainStore;
+    history: any;
     [propName: string]: any;
   }
 
@@ -184,10 +185,9 @@ export function schema2component(
 
       finalSchema.type || (finalSchema.type = 'page');
 
-      body = render(
+      body = amisRender(
         finalSchema,
         {
-          location,
           data: utils.createObject({
             ...match.params,
             amisStore: store,

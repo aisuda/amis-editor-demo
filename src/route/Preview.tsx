@@ -9,7 +9,7 @@ import AMISRenderer from '../component/AMISRenderer';
 import AddPageModal from '../component/AddPageModal';
 
 function isActive(link: any, location: any) {
-  const ret = matchPath(location.pathname, {
+  const ret = matchPath(location?.pathname, {
     path: link ? link.replace(/\?.*$/, '') : '',
     exact: true,
     strict: true
@@ -195,7 +195,7 @@ export default inject('store')(
         offScreen={store.offScreen}
       >
         <Switch>
-          {store.pages.map(item => (
+          {store.pages.map((item: any) => (
             <Route
               key={item.id}
               path={`/${item.path}`}

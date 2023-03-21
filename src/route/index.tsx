@@ -2,8 +2,9 @@ import React from 'react';
 import {ToastComponent, AlertComponent, Spinner} from 'amis';
 import {Route, Switch, Redirect, HashRouter as Router} from 'react-router-dom';
 import {observer} from 'mobx-react';
-import {IMainStore} from '../store';
-
+import {IMainStore} from '../store/index';
+// import Preview from './Preview';
+// import Editor from './Editor';
 const Preview = React.lazy(() => import('./Preview'));
 const Editor = React.lazy(() => import('./Editor'));
 

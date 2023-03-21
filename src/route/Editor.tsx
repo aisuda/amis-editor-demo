@@ -2,7 +2,7 @@ import React from 'react';
 import {Editor, ShortcutKey} from 'amis-editor';
 import {inject, observer} from 'mobx-react';
 import {RouteComponentProps} from 'react-router-dom';
-import {toast,Select} from 'amis';
+import {toast, Select} from 'amis';
 import {currentLocale} from 'i18n-runtime';
 import {Icon} from '../icons/index';
 import {IMainStore} from '../store';
@@ -33,9 +33,6 @@ const editorLanguages = [
     value: 'en-US'
   }
 ];
-
-// @ts-ignore
-__uri('amis/schema.json');
 
 export default inject('store')(
   observer(function ({
@@ -103,7 +100,7 @@ export default inject('store')(
           <div className="Editor-header-actions">
             <ShortcutKey />
             <Select
-              className='margin-left-space'
+              className="margin-left-space"
               options={editorLanguages}
               value={curLanguage}
               clearable={false}
@@ -145,7 +142,7 @@ export default inject('store')(
               fetcher: store.fetcher,
               notify: store.notify,
               alert: store.alert,
-              copy: store.copy,
+              copy: store.copy
             }}
           />
         </div>
