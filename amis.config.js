@@ -61,6 +61,6 @@ module.exports = {
     productionGzip: false,
     productionGzipExtensions: ['js', 'css', 'json'],
     plugins: [new MonacoWebpackPlugin()],
-    bundleAnalyzerReport: true,
+    bundleAnalyzerReport: false,
   }
 };
