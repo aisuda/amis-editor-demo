@@ -7,8 +7,7 @@ amis 可视化编辑器, 在线体验：https://aisuda.github.io/amis-editor-dem
 ## 本地运行这个项目
 
 1. `npm i` 安装依赖
-2. `npm start` 开服务
-3. `npm run dev` 开始编译，等编译出现时间信息后就可以刷新页面看效果了。
+3. `npm run dev` 等编译完成后本地打开页面看效果。
 
 ## 在其他项目中使用 amis-editor
 
