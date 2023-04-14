@@ -318,8 +318,3 @@ export interface PluginInterface extends Partial<BasicRendererInfo>, Partial<Bas
 }
 ```
 
-## 使用协议
-
-目前 amis-editor 未开源，但可以免费使用（包括商用）。
-
-近期 amis-editor 项目将会拆分，将 plugins 开源，方便进行调整。
