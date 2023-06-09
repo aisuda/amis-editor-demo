@@ -46,6 +46,17 @@ module.exports = {
     cssSourceMap: false,
     closeHotReload: false, // 是否关闭热更新
     closeEditorClient: true, // 是否关闭自动注入editor
+    proxyTable: {
+      /**
+       * 将含有'/apiTest'路径的api代理到'http://api-test.com.cn'上，
+       * 详细使用见 https://www.webpackjs.com/configuration/dev-server/#devserver-proxy
+       */
+      '/apiTest': {
+        target: 'http://api-test.com.cn', // 不支持跨域的接口根地址
+        ws: true,
+        changeOrigin: true,
+      },
+    }
   },
   build: {
     entry: { // webpack构建入口
