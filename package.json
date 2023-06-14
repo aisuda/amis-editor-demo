@@ -50,9 +50,10 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router": "5.0.1",
     "@types/react-router-dom": "^4.3.2",
-    "prettier": "^2.2.1",
-    "typescript": "^4.5.5",
+    "acorn": "^8.8.2",
     "amis-widget-cli": "^3.1.8",
-    "monaco-editor-webpack-plugin": "6.0.0"
+    "monaco-editor-webpack-plugin": "6.0.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.5.5"
   }
 }

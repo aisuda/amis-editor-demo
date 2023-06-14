@@ -180,10 +180,12 @@ export function schema2component(
         embedMode,
         ...rest
       } = this.props;
-      const finalSchema = schemaProp || schema;
+      let finalSchema = schemaProp || schema;
       let body: React.ReactNode;
 
-      finalSchema.type || (finalSchema.type = 'page');
+      if (finalSchema.type) {
+        finalSchema = {...finalSchema, type: 'page'};
+      }
 
       body = amisRender(
         finalSchema,
