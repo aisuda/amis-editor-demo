@@ -11,7 +11,7 @@ import 'amis/lib/helper.css';
 import 'amis/sdk/iconfont.css';
 import 'amis-editor-core/lib/style.css';
 import './scss/style.scss';
-import {setDefaultTheme} from 'amis-core';
+import {setDefaultTheme} from 'amis';
 
 setDefaultTheme('cxd');
 

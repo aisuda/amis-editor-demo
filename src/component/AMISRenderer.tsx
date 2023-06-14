@@ -162,8 +162,7 @@ export function schema2component(
               history.push(to);
             }
           }),
-        affixOffsetTop: props.embedMode ? 0 : 50,
-        theme: store.theme
+        affixOffsetTop: props.embedMode ? 0 : 50
       });
     }
 
@@ -183,7 +182,7 @@ export function schema2component(
       let finalSchema = schemaProp || schema;
       let body: React.ReactNode;
 
-      if (finalSchema.type) {
+      if (!finalSchema.type) {
         finalSchema = {...finalSchema, type: 'page'};
       }
 
@@ -201,7 +200,8 @@ export function schema2component(
           notify: store.notify,
           alert: store.alert,
           copy: store.copy,
-          propsTransform: transform
+          propsTransform: transform,
+          theme: store.theme
         },
         this.getEnv()
       );

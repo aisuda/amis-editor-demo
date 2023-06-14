@@ -26,9 +26,15 @@ export default inject('store')(
   }: {store: IMainStore} & RouteComponentProps) {
     function renderHeader() {
       return (
-        <div>
-          <div className={`a-Layout-headerBar`}>
-            <div className="hidden-xs p-t-sm pull-right px-2">
+        <>
+          <div className={`cxd-Layout-brandBar`}>
+            <div className="cxd-Layout-brand text-ellipsis">
+              <i className="fa fa-paw"></i>
+              <span className="hidden-folded m-l-sm">AMIS 示例</span>
+            </div>
+          </div>
+          <div className={`cxd-Layout-headerBar`}>
+            <div className="hidden-xs p-t-sm ml-auto px-2">
               <Button size="sm" className="m-r-xs" level="success" disabled>
                 全部导出
               </Button>
@@ -41,7 +47,7 @@ export default inject('store')(
               </Button>
             </div>
           </div>
-        </div>
+        </>
       );
     }
 

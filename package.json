@@ -26,15 +26,15 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "amis": "3.1.1",
     "amis-core": "3.1.1",
-    "amis-formula": "3.1.1",
-    "amis-ui": "3.1.1",
     "amis-editor": "^5.4.1",
     "amis-editor-core": "^5.4.1",
+    "amis-formula": "3.1.1",
+    "amis-ui": "3.1.1",
     "axios": "0.21.1",
     "copy-to-clipboard": "^3.2.0",
-    "mobx": "^4.5.0",
-    "mobx-react": "^6.3.1",
-    "mobx-state-tree": "^3.17.3",
+    "mobx": "4.15.7",
+    "mobx-react": "6.3.1",
+    "mobx-state-tree": "3.17.3",
     "qs": "6.5.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -54,6 +54,7 @@
     "amis-widget-cli": "^3.1.8",
     "monaco-editor-webpack-plugin": "6.0.0",
     "prettier": "^2.2.1",
+    "sass": "^1.63.4",
     "typescript": "^4.5.5"
   }
 }
