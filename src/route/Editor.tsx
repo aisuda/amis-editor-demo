@@ -13,12 +13,10 @@ import '../editor/MyRenderer';
 let currentIndex = -1;
 
 let host = `${window.location.protocol}//${window.location.host}`;
-let iframeUrl = '/editor.html';
 
 // 如果在 gh-pages 里面
 if (/^\/amis-editor-demo/.test(window.location.pathname)) {
   host += '/amis-editor';
-  iframeUrl = '/amis-editor-demo/demo' + iframeUrl;
 }
 
 const schemaUrl = `${host}/schema.json`;
@@ -136,7 +134,6 @@ export default inject('store')(
             onSave={save}
             className="is-fixed"
             $schemaUrl={schemaUrl}
-            iframeUrl={iframeUrl}
             showCustomRenderersPanel={true}
             amisEnv={{
               fetcher: store.fetcher,

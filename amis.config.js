@@ -33,7 +33,6 @@ module.exports = {
   dev: {
     entry: { // 本地调试模式的入口
       index: './src/index.tsx',
-      editor:  './src/mobile.tsx',
     },
     // 用于开启本地调试模式的相关配置信息
     NODE_ENV: 'development',
