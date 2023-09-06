@@ -59,8 +59,7 @@ module.exports = {
   },
   build: {
     entry: { // webpack构建入口
-      index: './src/index.tsx',
-      editor:  './src/mobile.tsx',
+      index: './src/index.tsx'
     },
     // 用于构建生产环境代码的相关配置信息
     NODE_ENV: 'production',
