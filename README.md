@@ -9,6 +9,10 @@ amis 可视化编辑器, 在线体验：https://aisuda.github.io/amis-editor-dem
 1. `npm i` 安装依赖
 3. `npm run dev` 等编译完成后本地打开页面看效果。
 
+## 历史版本预览地址
+1. (5.4.1)[https://aisuda.github.io/amis-editor-demo/demo-5.4.1/index.html]
+2. 
+
 ## 在其他项目中使用 amis-editor
 
 ```
