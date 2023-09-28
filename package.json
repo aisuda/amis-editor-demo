@@ -24,8 +24,8 @@
   "homepage": "https://github.com/aisuda/amis-editor-demo#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "amis": "1.9.1-beta.21",
-    "amis-editor": "4.1.0-beta.28",
+    "amis": "1.2.4-beta.5",
+    "amis-editor": "3.3.5",
     "axios": "0.21.2",
     "copy-to-clipboard": "^3.2.0",
     "mobx": "4.15.7",
@@ -37,7 +37,8 @@
     "react-dom": "^16.14.0",
     "react-hook-form": "^7.39.3",
     "react-router": "5.0.1",
-    "react-router-dom": "5.0.1"
+    "react-router-dom": "5.0.1",
+    "tinymce": "^6.7.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.123",

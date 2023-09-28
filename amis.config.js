@@ -26,7 +26,7 @@ module.exports = {
     projectDir: ['src'],
     template: resolve('./src/index.html'), // 使用自己的html模板
     // cssLoaderUrl: true,
-    // cssLoaderUrlDir: 'editor/fontawesome-free',
+    cssLoaderUrlDir: 'editor/fontawesome-free',
     moduleRules: [], // 用于配置自定义loaders
     plugins: [], // 用于配置自定义plugins
   },
@@ -64,8 +64,8 @@ module.exports = {
     },
     // 用于构建生产环境代码的相关配置信息
     NODE_ENV: 'production',
-    assetsRoot: resolve('./demo-4.1.0-beta.28'), // 打包后的文件绝对路径（物理路径）
-    assetsPublicPath: 'https://aisuda.github.io/amis-editor-demo/demo-4.1.0-beta.28/', // 设置静态资源的引用路径（根域名+路径）
+    assetsRoot: resolve('./demo-3.3.5'), // 打包后的文件绝对路径（物理路径）
+    assetsPublicPath: 'https://aisuda.github.io/amis-editor-demo/demo-3.3.5/', // 设置静态资源的引用路径（根域名+路径）
     assetsSubDirectory: '', // 资源引用二级路径
     productionSourceMap: false,
     productionGzip: false,

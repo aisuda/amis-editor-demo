@@ -118,7 +118,6 @@ export default inject('store')(
             onChange={onChange}
             className="is-fixed"
             $schemaUrl={schemaUrl}
-            showCustomRenderersPanel={true}
             amisEnv={{
               fetcher: store.fetcher,
               notify: store.notify,
