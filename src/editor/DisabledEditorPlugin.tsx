@@ -1,10 +1,4 @@
 import {registerEditorPlugin, BasePlugin} from 'amis-editor';
-import {
-  RendererEventContext,
-  SubRendererInfo,
-  BasicSubRenderInfo,
-  PluginInterface
-} from 'amis-editor';
 
 /**
  * 用于隐藏一些不需要的Editor组件
@@ -24,9 +18,9 @@ export class ManagerEditorPlugin extends BasePlugin {
   order = 9999;
 
   buildSubRenderers(
-    context: RendererEventContext,
-    renderers: Array<SubRendererInfo>
-  ): BasicSubRenderInfo | Array<BasicSubRenderInfo> | void {
+    context: any,
+    renderers: Array<any>
+  ): any {
     // 更新NPM自定义组件排序和分类
     for (let index = 0, size = renderers.length; index < size; index++) {
       // 判断是否需要隐藏 Editor预置组件

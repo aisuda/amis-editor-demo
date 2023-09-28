@@ -1,14 +1,11 @@
 import React from 'react';
-import {Editor, ShortcutKey} from 'amis-editor';
+import {Editor} from 'amis-editor';
 import {inject, observer} from 'mobx-react';
 import {RouteComponentProps} from 'react-router-dom';
 import {toast, Select} from 'amis';
-import {currentLocale} from 'i18n-runtime';
 import {Icon} from '../icons/index';
 import {IMainStore} from '../store';
 import '../editor/DisabledEditorPlugin'; // 用于隐藏一些不需要的Editor预置组件
-import '../renderer/MyRenderer';
-import '../editor/MyRenderer';
 
 let currentIndex = -1;
 
@@ -40,7 +37,6 @@ export default inject('store')(
     match
   }: {store: IMainStore} & RouteComponentProps<{id: string}>) {
     const index: number = parseInt(match.params.id, 10);
-    const curLanguage = currentLocale(); // 获取当前语料类型
 
     if (index !== currentIndex) {
       currentIndex = index;
@@ -96,14 +92,6 @@ export default inject('store')(
           </div>
 
           <div className="Editor-header-actions">
-            <ShortcutKey />
-            <Select
-              className="margin-left-space"
-              options={editorLanguages}
-              value={curLanguage}
-              clearable={false}
-              onChange={(e: any) => changeLocale(e.value)}
-            />
             <div
               className={`header-action-btn m-1 ${
                 store.preview ? 'primary' : ''
@@ -128,10 +116,6 @@ export default inject('store')(
             isMobile={store.isMobile}
             value={store.schema}
             onChange={onChange}
-            onPreview={() => {
-              store.setPreview(true);
-            }}
-            onSave={save}
             className="is-fixed"
             $schemaUrl={schemaUrl}
             showCustomRenderersPanel={true}

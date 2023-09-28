@@ -9,7 +9,7 @@ import '@fortawesome/fontawesome-free/css/v4-shims.css';
 import 'amis/lib/themes/cxd.css';
 import 'amis/lib/helper.css';
 import 'amis/sdk/iconfont.css';
-import 'amis-editor-core/lib/style.css';
+import 'amis-editor/dist/style.css';
 import './scss/style.scss';
 import {setDefaultTheme} from 'amis';
 
