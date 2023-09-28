@@ -12,6 +12,10 @@ amis 可视化编辑器, 在线体验：https://aisuda.github.io/amis-editor-dem
 ## 历史版本预览地址
 1. [5.6.1(2023.9.28)](https://aisuda.github.io/amis-editor-demo/demo-5.6.1/index.html)
 2. [5.4.1(2023.6.9)](https://aisuda.github.io/amis-editor-demo/demo-5.4.1/index.html)
+3. [4.1.0-beta.28(2022.5.27)](https://aisuda.github.io/amis-editor-demo/demo-4.1.0-beta.28/index.html)
+4. [4.0.2-beta.10(2022-02-23)](https://aisuda.github.io/amis-editor-demo/demo-4.0.2-beta.10/index.html)
+5. [3.3.5(2021-08-12)](https://aisuda.github.io/amis-editor-demo/demo-3.3.5/index.html)
+
 
 ## 在其他项目中使用 amis-editor
 
