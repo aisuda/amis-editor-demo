@@ -1,6 +1,10 @@
 import React from 'react';
 import {ToastComponent, AlertComponent, Spinner} from 'amis';
-import {Route, Switch, Redirect, HashRouter as Router} from 'react-router-dom';
+/**
+ * BrowserRouter: history 路由模式
+ * HashRouter: hash 路由模式
+ */
+import {Route, Switch, Redirect, BrowserRouter as Router} from 'react-router-dom';
 import {observer} from 'mobx-react';
 import {IMainStore} from '../store/index';
 // import Preview from './Preview';
