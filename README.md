@@ -29,6 +29,7 @@ amis 可视化编辑器, 在线体验：https://aisuda.github.io/amis-editor-dem
     // 省略
     ```
 4. Push 变更到远程仓库
+5. 等待 Vercel Deploy 完成，访问分配的域名加载界面（eg. amis-editor-demo-murex.vercel.app）
 
 
 ## 历史版本预览地址
