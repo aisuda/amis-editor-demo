@@ -12,8 +12,11 @@ import 'amis/sdk/iconfont.css';
 import 'amis-editor-core/lib/style.css';
 import './scss/style.scss';
 import {setDefaultTheme} from 'amis';
+import {setThemeConfig} from 'amis-editor-core';
+import themeConfig from 'amis-theme-editor-helper/lib/systemTheme/cxd';
 
 setDefaultTheme('cxd');
+setThemeConfig(themeConfig);
 
 // react < 18
 ReactDOM.render(<App />, document.getElementById('root'));
