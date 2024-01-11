@@ -1,0 +1,7 @@
+/*!
+ * amis-editor-demo v1.0.0
+ * author: fex
+ * build tool: AKFun
+ * build time: Thu Jan 11 2024 10:20:04 GMT+0800 (中国标准时间)
+ * build tool info: https://github.com/wibetter/akfun
+ */
