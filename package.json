@@ -30,7 +30,7 @@
     "amis-ui": "6.0.0",
     "amis-editor": "6.0.0",
     "amis-editor-core": "6.0.0",
-    "axios": "0.21.2",
+    "axios": "0.21.1",
     "copy-to-clipboard": "^3.2.0",
     "mobx": "4.15.7",
     "mobx-react": "6.3.1",
