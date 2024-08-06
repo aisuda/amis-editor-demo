@@ -9,9 +9,10 @@ function resolve(dir) {
 // 包括生产和开发的环境配置信息
 module.exports = {
   webpack: {
+    // webpack的resolve配置
     resolve: {
-      // webpack的resolve配置
-      extensions: ['.js', '.jsx', '.ts', '.tsx','.esm.js', '.umd.js', '.min.js', '.json'], // 用于配置webpack在尝试过程中用到的后缀列表
+      // 用于配置webpack在尝试过程中用到的后缀列表
+      extensions: ['.js', '.jsx', '.ts', '.tsx','.esm.js', '.umd.js', '.min.js', '.json', '.mjs'],
       alias: {
         '@': resolve('src'),
         // $function: resolve('src/function'),
@@ -22,7 +23,7 @@ module.exports = {
     createDeclaration: false, // 打包时是否创建ts声明文件
     ignoreNodeModules: false, // 打包时是否忽略 node_modules
     allowList: [], // ignoreNodeModules为true时生效
-    externals: [],
+    externals: ['react/jsx-runtime'],
     projectDir: ['src'],
     template: resolve('./src/index.html'), // 使用自己的html模板
     // cssLoaderUrl: true,
@@ -64,8 +65,8 @@ module.exports = {
     },
     // 用于构建生产环境代码的相关配置信息
     NODE_ENV: 'production',
-    assetsRoot: resolve('./demo-6.0.0'), // 打包后的文件绝对路径（物理路径）
-    assetsPublicPath: 'https://aisuda.github.io/amis-editor-demo/demo-6.0.0/', // 设置静态资源的引用路径（根域名+路径）
+    assetsRoot: resolve('./demo-6.7.0'), // 打包后的文件绝对路径（物理路径）
+    assetsPublicPath: 'https://aisuda.github.io/amis-editor-demo/demo-6.7.0/', // 设置静态资源的引用路径（根域名+路径）
     assetsSubDirectory: '', // 资源引用二级路径
     productionSourceMap: false,
     productionGzip: false,

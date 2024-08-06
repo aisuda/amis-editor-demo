@@ -1,0 +1,23 @@
+/**
+ * Character class utilities for XML NS 1.0 edition 3.
+ *
+ * @author Louis-Dominique Dubeau
+ * @license MIT
+ * @copyright Louis-Dominique Dubeau
+ */
+
+/**
+ * Character classes and associated utilities for the 2nd edition of XML 1.1.
+ *
+ * @author Louis-Dominique Dubeau
+ * @license MIT
+ * @copyright Louis-Dominique Dubeau
+ */
+
+/**
+ * Character classes and associated utilities for the 5th edition of XML 1.0.
+ *
+ * @author Louis-Dominique Dubeau
+ * @license MIT
+ * @copyright Louis-Dominique Dubeau
+ */
