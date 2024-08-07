@@ -9,6 +9,29 @@ amis 可视化编辑器, 在线体验：https://aisuda.github.io/amis-editor-dem
 1. `npm i` 安装依赖
 3. `npm run dev` 等编译完成后本地打开页面看效果。
 
+## 快速部署
+
+### Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faisuda%2Famis-editor-demo)
+
+#### 部署步骤
+1. 点击 `Deploy` 按钮
+2. 更新 `Vercel Build & Development Settings` 
+    ```
+    Build Command: npm run build
+    Output Directory: ./demo-5.6.1-v2
+    Install Command: npm install
+    ```
+3. 更新 `amis.config.js`
+    ```js
+    // 省略
+    assetsPublicPath: './'
+    // 省略
+    ```
+4. Push 变更到远程仓库
+5. 等待 Vercel Deploy 完成，访问分配的域名加载界面（eg. amis-editor-demo-murex.vercel.app）
+
+
 ## 历史版本预览地址
 1. [6.7.0(2024.08.06)](https://aisuda.github.io/amis-editor-demo/demo-6.7.0/index.html)
 2. [6.0.0(2023.12.29)](https://aisuda.github.io/amis-editor-demo/demo-6.0.0/index.html)
