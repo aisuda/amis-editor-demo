@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import NotFound from './NotFound';
 import AMISRenderer from '../component/AMISRenderer';
 import AddPageModal from '../component/AddPageModal';
+import {saveAs} from 'file-saver';
 
 function isActive(link: any, location: any) {
   const ret = matchPath(location?.pathname, {
@@ -24,6 +25,12 @@ export default inject('store')(
     location,
     history
   }: {store: IMainStore} & RouteComponentProps) {
+    function handleExportAll() {
+      const data = JSON.stringify(store.pages, null, 2);
+      const blob = new Blob([data], {type: 'application/json'});
+      saveAs(blob, 'amis_pages_export.json');
+    }
+
     function renderHeader() {
       return (
         <>
@@ -35,7 +42,7 @@ export default inject('store')(
           </div>
           <div className={`cxd-Layout-headerBar`}>
             <div className="hidden-xs p-t-sm ml-auto px-2">
-              <Button size="sm" className="m-r-xs" level="success" disabled>
+              <Button size="sm" className="m-r-xs" level="success" onClick={handleExportAll}>
                 全部导出
               </Button>
               <Button

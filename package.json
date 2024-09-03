@@ -26,10 +26,11 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "amis": "6.7.0",
     "amis-core": "6.7.0",
-    "amis-formula": "6.7.0",
-    "amis-ui": "6.7.0",
     "amis-editor": "6.7.0",
     "amis-editor-core": "6.7.0",
+    "amis-editor-demo": "file:",
+    "amis-formula": "6.7.0",
+    "amis-ui": "6.7.0",
     "axios": "0.21.1",
     "copy-to-clipboard": "^3.2.0",
     "mobx": "4.15.7",
@@ -43,6 +44,7 @@
     "react-router-dom": "5.0.1"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/lodash": "^4.14.123",
     "@types/node": "^11.13.8",
     "@types/qs": "^6.5.3",
